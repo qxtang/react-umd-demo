@@ -78,9 +78,11 @@ export default function App() {
 
 # TODO
 
--   添加修改 antd 主题色的方法或配置项
--   能否使用 redux？ （不行就 context）
--   如何跨域请求？
+-   antd、react、react-dom 太大了能否分包、按需打包
+-   能否使用更小的 preact
+-   添加修改主题色方法或配置项
+-   能否使用 redux（不行就 context）
+-   如何跨域请求
     -   cors-anywhere
     -   在 BFF 配置允许跨域白名单
 
