@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"qwsdk.css","sourceRoot":""}
+{"version":3,"file":"qwsdk.css","mappings":"AAAA;IACI,yBAAyB;IACzB,aAAa;AACjB","sources":["webpack://QwSdk/./style/global.css"],"sourcesContent":[".qwsdk_container {\r\n    background-color: #efefef;\r\n    padding: 10px;\r\n}\r\n"],"names":[],"sourceRoot":""}

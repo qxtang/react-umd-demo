@@ -1,15 +1,14 @@
 // webpack config for export react component
 
-const webpackConfig = Object.create(require('./webpack.config.js'))
+const webpackConfig = Object.create(require('./webpack.config.js'));
 
-webpackConfig.entry = './Main.jsx'
-webpackConfig.output = Object.create(webpackConfig.output)
-webpackConfig.output.filename = 'qwsdk-component.js'
+webpackConfig.entry = './Main.jsx';
+webpackConfig.output = Object.create(webpackConfig.output);
+webpackConfig.output.filename = 'qwsdk-react.js';
 
-delete webpackConfig.resolve.alias
 webpackConfig.externals = {
-  react: 'commonjs react',
-  'react-dom': 'commonjs react-dom'
-}
+    react: 'commonjs react',
+    'react-dom': 'commonjs react-dom',
+};
 
-module.exports = webpackConfig
+module.exports = webpackConfig;

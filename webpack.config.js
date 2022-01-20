@@ -1,18 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const ENV = process.env.NODE_ENV || 'development';
 const isDev = ENV !== 'production';
-
-const cssLoader = [
-    {
-        loader: 'css-loader',
-    },
-    {
-        loader: 'postcss-loader',
-    },
-];
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
@@ -41,12 +32,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: isDev
-                    ? ['style-loader'].concat(cssLoader)
-                    : ExtractTextPlugin.extract({
-                          fallback: 'style-loader',
-                          use: cssLoader,
-                      }),
+                use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
@@ -61,7 +47,7 @@ module.exports = {
             },
         ],
     },
-    plugins: isDev ? [new webpack.NoEmitOnErrorsPlugin()] : [new ExtractTextPlugin('qwsdk.css')],
+    plugins: isDev ? [new webpack.NoEmitOnErrorsPlugin()] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' })],
     devServer: {
         port: 8002,
         host: '0.0.0.0',
