@@ -1,6 +1,6 @@
 # QW-SDK-DEMO
 
-- 仅作功能演示，追求尽可能简洁的表达我的意图，所以许多特性和功能没有，比如 less、css module、typescript 这些，
+- 仅作功能演示，为了简洁所以开发环境许多功能没有，比如 less、css module、typescript
 
 # 解决的问题
 

@@ -13,6 +13,12 @@
     "build": "rimraf ./dist && cross-env NODE_ENV=production webpack && cross-env NODE_ENV=production webpack --config webpack.config.comp.js && cross-env NODE_ENV=production webpack --config webpack.config.mini.js",
     "lint": "eslint src"
   },
+  "files": [
+    "readme.md",
+    "dist",
+    "typings",
+    "package.json"
+  ],
   "author": "qxtang",
   "devDependencies": {
     "@babel/core": "^7.16.10",
