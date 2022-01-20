@@ -1,14 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import 'es6-promise/auto';
-import MainComponent from './Main';
+import Main from './Main';
 
 class QwSdk {
     constructor(options = {}) {
         this.options = options;
     }
 
-    render(container, callback = () => { }) {
+    render(container, callback = () => {}) {
         let node = null;
         container = container || this.options.container;
 
@@ -21,8 +20,8 @@ class QwSdk {
             node = container;
         }
 
-        return render(<MainComponent options={this.options} />, node, callback);
+        return render(<Main options={this.options} />, node, callback);
     }
 }
 
-module.exports = QwSdk;
+export default QwSdk;

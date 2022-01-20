@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -12,29 +11,23 @@ const cssLoader = [
     },
     {
         loader: 'postcss-loader',
-        options: {
-            sourceMap: true,
-            plugins: [
-                autoprefixer({
-                    browsers: ['last 2 versions'],
-                }),
-            ],
-        },
     },
 ];
 
 module.exports = {
+    mode: isDev ? 'development' : 'production',
+    devtool: isDev ? 'cheap-module-source-map' : 'source-map',
     context: path.resolve(__dirname, 'src'),
     entry: './index.js',
-
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist',
         filename: 'qwsdk.js',
-        libraryTarget: 'umd',
-        library: 'QwSdk',
+        library: {
+            name: 'QwSdk',
+            type: 'umd',
+        },
     },
-
     resolve: {
         extensions: ['.jsx', '.js', '.json'],
         alias: {
@@ -42,7 +35,6 @@ module.exports = {
             'react-dom': 'preact-compat',
         },
     },
-
     module: {
         rules: [
             {
@@ -73,15 +65,11 @@ module.exports = {
         ],
     },
     plugins: isDev ? [new webpack.NoEmitOnErrorsPlugin()] : [new ExtractTextPlugin('qwsdk.css')],
-
-    devtool: isDev ? 'cheap-module-source-map' : 'source-map',
-
     devServer: {
         port: 8002,
-        host: 'localhost',
-        // publicPath: '/dist',
-        contentBase: './dev',
-        // historyApiFallback: true,
-        // open: true
+        host: '0.0.0.0',
+        static: {
+            directory: path.join(__dirname, './dev'),
+        },
     },
 };
