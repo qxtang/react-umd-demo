@@ -1,11 +1,9 @@
 # QW-SDK-DEMO
 
--   仅作功能演示，为了简洁所以开发环境许多功能没有，比如 less、css module、typescript
-
 # 解决的问题
 
--   接入方调用企微能力不受技术栈限制
--   解决 iframe 的痛点
+-   接入方调用企微中台能力不受技术栈限制
+-   解决 iframe 的痛点：使用起来不友好、各种隔离
 
 # 使用示例
 
@@ -77,3 +75,7 @@ export default function App() {
 # 参数
 
 [typings/index.d.ts](https://gitee.com/qx9/qw-sdk-demo/blob/master/typings/index.d.ts)
+
+# 其他
+
+-   仅作功能演示，为了简洁所以开发环境许多功能没有，比如 less、css module、typescript
