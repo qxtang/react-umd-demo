@@ -25,13 +25,13 @@
         <div id="qw-container"></div>
         <script src="/dist/qwsdk.js"></script>
         <script>
-            const option = {
+            const instance = new QwSdk({
                 permission: ['00', '01'],
                 page: 'channelCode',
-            };
+            });
 
-            const instance = new QwSdk(option);
             instance.render('qw-container');
+            instance.seyHello();
         </script>
     </body>
 </html>

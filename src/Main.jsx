@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style/global.css';
 
-class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { options } = this.props;
-
-        return <div>你好: {JSON.stringify(options)}</div>;
-    }
-}
+const Main = (props) => {
+    const { options } = props;
+    return (
+        <div className="qwsdk_container">
+            <div>你好</div>
+            <pre>{JSON.stringify(options, null, 2)}</pre>
+        </div>
+    );
+};
 
 export default Main;

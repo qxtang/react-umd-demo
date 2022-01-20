@@ -30,10 +30,6 @@ module.exports = {
     },
     resolve: {
         extensions: ['.jsx', '.js', '.json'],
-        alias: {
-            react: 'preact-compat',
-            'react-dom': 'preact-compat',
-        },
     },
     module: {
         rules: [

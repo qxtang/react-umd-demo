@@ -7,6 +7,10 @@ class QwSdk {
         this.options = options;
     }
 
+    seyHello() {
+        console.log('hello，我是企微 sdk！！');
+    }
+
     render(container, callback = () => {}) {
         let node = null;
         container = container || this.options.container;
