@@ -23,7 +23,7 @@
 ## 2、npm 安装
 
 ```sh
-npm i --save qw-sdk-demo
+npm install qw-sdk-demo
 ```
 
 # 使用
