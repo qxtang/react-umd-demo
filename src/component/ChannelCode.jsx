@@ -4,7 +4,7 @@ import Button from 'antd/lib/button';
 const ChannelCode = () => {
     return (
         <div>
-            <h1>ChannelCode 页面</h1>
+            <div>ChannelCode 页面</div>
             <Button type="primary">antd 按钮</Button>
         </div>
     );

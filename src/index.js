@@ -29,7 +29,7 @@ class QwSdk {
             node = container;
         }
 
-        return render(<Main options={options} />, node, callback);
+        return render(<Main options={options}/>, node, callback);
     }
 }
 
