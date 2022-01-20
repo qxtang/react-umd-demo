@@ -18,17 +18,37 @@
                 width: 800px;
                 max-width: 100vw;
             }
+
+            .btns {
+                display: flex;
+                align-items: center;
+            }
+
+            .btns button {
+                height: 30px;
+                min-width: 70px;
+                margin-right: 5px;
+                padding: 5px;
+            }
         </style>
     </head>
 
     <body>
         <div>
             <h1>我是接入方~</h1>
+            <div class="btns">
+                <button id="btn1">渲染channelCode</button>
+                <button id="btn2">渲染materialCenter</button>
+                <button id="btn3">渲染greeting</button>
+                <button id="btn4">sayHello</button>
+            </div>
             <div id="qw-container"></div>
         </div>
 
         <script src="/dist/qwsdk.js"></script>
         <script>
+            const btn1 = document.querySelector('#btn1');
+
             const qw = new QwSdk({
                 container: 'qw-container',
             });
@@ -41,7 +61,36 @@
                 },
             });
 
-            qw.sayHello();
+            btn1.onclick = function () {
+                qw.render({
+                    page: 'channelCode',
+                    permission: ['00', '01'],
+                    callback: () => {
+                        console.log('channelCode渲染完成~');
+                    },
+                });
+            };
+            btn2.onclick = function () {
+                qw.render({
+                    page: 'materialCenter',
+                    permission: ['00', '01'],
+                    callback: () => {
+                        console.log('materialCenter渲染完成~');
+                    },
+                });
+            };
+            btn3.onclick = function () {
+                qw.render({
+                    page: 'greeting',
+                    permission: ['00', '01'],
+                    callback: () => {
+                        console.log('greeting渲染完成~');
+                    },
+                });
+            };
+            btn4.onclick = function () {
+                qw.sayHello();
+            };
         </script>
     </body>
 </html>

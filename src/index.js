@@ -8,7 +8,7 @@ class QwSdk {
     }
 
     sayHello() {
-        console.log('hello，我是企微 sdk!!!');
+        console.log(new Date(), 'hello，我是企微 sdk!!!');
     }
 
     render(options = {}) {
