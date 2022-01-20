@@ -15,7 +15,7 @@
 
             #qw-container {
                 margin: 0 auto;
-                width: 1050px;
+                width: 800px;
                 max-width: 100vw;
             }
         </style>
@@ -25,13 +25,19 @@
         <div id="qw-container"></div>
         <script src="/dist/qwsdk.js"></script>
         <script>
-            const instance = new QwSdk({
-                permission: ['00', '01'],
-                page: 'channelCode',
+            const qw = new QwSdk({
+                container: 'qw-container',
             });
 
-            instance.render('qw-container');
-            instance.seyHello();
+            qw.render({
+                page: 'channelCode', // 要渲染哪一个中台组件
+                permission: ['00', '01'], // 权限点
+                callback: () => {
+                    console.log('渲染完成~');
+                },
+            });
+
+            qw.sayHello();
         </script>
     </body>
 </html>

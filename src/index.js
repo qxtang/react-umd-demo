@@ -7,13 +7,14 @@ class QwSdk {
         this.options = options;
     }
 
-    seyHello() {
-        console.log('hello，我是企微 sdk！！');
+    sayHello() {
+        console.log('hello，我是企微 sdk!!!');
     }
 
-    render(container, callback = () => {}) {
+    render(options = {}) {
+        const { container } = this.options;
+        const { callback = () => {} } = options;
         let node = null;
-        container = container || this.options.container;
 
         if (!container) throw new Error(`配置缺少包裹节点: ${container}`);
 
@@ -24,7 +25,7 @@ class QwSdk {
             node = container;
         }
 
-        return render(<Main options={this.options} />, node, callback);
+        return render(<Main options={options} />, node, callback);
     }
 }
 

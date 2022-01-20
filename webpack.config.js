@@ -26,6 +26,7 @@ module.exports = {
         library: {
             name: 'QwSdk',
             type: 'umd',
+            export: 'default',
         },
     },
     resolve: {

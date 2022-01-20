@@ -2,21 +2,22 @@ export as namespace QwSdk;
 
 export default QwSdk;
 
+type QwComponentType = 'channelCode' | 'materialCenter' | 'greeting'
+
 declare class QwSdk {
     constructor(options: QwSdk.QwSdkOptions);
-    render(element: string | HTMLElement): void;
+    sayHello(): void;
+    render(options: {
+        page: QwComponentType,  // 渲染哪一个中台组件
+        permission?: string[],  // 中台权限点
+        callback?: () => any,   // 调用 reactDom.render 方法的回调
+    }): void;
 }
 
 declare namespace QwSdk {
     interface QwSdkOptions {
-        // 渲染节点id（也可以直接通过 render 方法传进来）
-        container?: string;
-
-        // 中台权限点
-        permission?: string[];
-
-        // 渲染哪一个页面
-        page: 'channelCode' | 'materialCenter'
+        // 渲染节点 id 或 元素
+        container: string | HTMLElement;
     }
 
 }
