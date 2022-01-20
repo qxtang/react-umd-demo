@@ -72,9 +72,17 @@ export default function App() {
 }
 ```
 
-# 参数
+# 所有参数
 
 [typings/index.d.ts](https://gitee.com/qx9/qw-sdk-demo/blob/master/typings/index.d.ts)
+
+# TODO
+
+-   添加修改 antd 主题色的方法或配置项
+-   能否使用 redux？ （不行就 context）
+-   如何跨域请求？
+    -   cors-anywhere
+    -   在 BFF 配置允许跨域白名单
 
 # 其他
 
