@@ -19,5 +19,4 @@ declare namespace QwSdk {
         // 渲染节点 id 或 元素
         container: string | HTMLElement;
     }
-
 }
