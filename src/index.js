@@ -7,6 +7,10 @@ class QwSdk {
         this.options = options;
     }
 
+    setPrimaryColor(color) {
+        console.log(color);
+    }
+
     sayHello() {
         console.log(new Date(), 'hello，我是企微 sdk!!!');
     }

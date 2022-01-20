@@ -6,6 +6,7 @@ type QwComponentType = 'channelCode' | 'materialCenter' | 'greeting'
 
 declare class QwSdk {
     constructor(options: QwSdk.QwSdkOptions);
+    setPrimaryColor(color: string): void;
     sayHello(): void;
     render(options: {
         page: QwComponentType,  // 渲染哪一个中台组件

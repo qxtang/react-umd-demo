@@ -8,8 +8,6 @@
         <title>qw-sdk-demo</title>
         <style type="text/css">
             * {
-                margin: 0;
-                padding: 0;
                 box-sizing: border-box;
             }
 
@@ -41,6 +39,7 @@
                 <button id="btn2">渲染materialCenter</button>
                 <button id="btn3">渲染greeting</button>
                 <button id="btn4">sayHello</button>
+                <button id="btn5">修改主题颜色</button>
             </div>
             <div id="qw-container"></div>
         </div>
@@ -90,6 +89,9 @@
             };
             btn4.onclick = function () {
                 qw.sayHello();
+            };
+            btn5.onclick = function () {
+                qw.setPrimaryColor('#' + ('00000' + ((Math.random() * 0x1000000) << 0).toString(16)).substr(-6));
             };
         </script>
     </body>
