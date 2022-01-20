@@ -1,4 +1,4 @@
-// webpack config for export react component
+// 用于打包 react 组件
 
 const webpackConfig = Object.create(require('./webpack.config.js'));
 

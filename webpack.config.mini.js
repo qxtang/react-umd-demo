@@ -1,4 +1,4 @@
-// webpack config for export min.js
+// 用于打包 js 文件
 
 const webpackConfig = Object.create(require('./webpack.config.js'));
 
