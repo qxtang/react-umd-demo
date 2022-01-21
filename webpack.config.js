@@ -77,6 +77,9 @@ module.exports = {
                 extractComments: false,
             }),
         ],
+        splitChunks: {
+            chunks: 'all',
+        }
     },
     plugins: isDev ? [...commonPlugins] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' }), ...commonPlugins],
     devServer: {
