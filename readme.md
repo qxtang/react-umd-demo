@@ -1,6 +1,6 @@
 # 天下苦 iframe 久矣
 
-一个中台前端组件解决方案项目 demo，以公司的企微中台产品为例
+一个中台前端解决方案项目 demo，以公司的企微中台产品为例
 
 # 解决的问题
 
@@ -85,7 +85,7 @@ export default function App() {
 
 # 所有参数和方法
 
-[typings/index.d.ts](https://gitee.com/qx9/qw-sdk-demo/blob/master/typings/index.d.ts)
+[typings/index.d.ts](https://github.com/qxtang/qw-sdk-demo/blob/master/typings/index.d.ts)
 
 # 可用命令
 
