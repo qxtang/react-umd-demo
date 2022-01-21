@@ -1,8 +1,10 @@
-# QW-SDK-DEMO
+# 天下苦 iframe 久矣
+
+一个中台前端组件解决方案项目 demo，以公司的企微中台产品为例
 
 # 解决的问题
 
--   接入方调用企微中台能力不受技术栈限制
+-   接入方调用中台前端组件不受技术栈限制
 -   解决 iframe 的痛点：使用起来不友好、各种隔离
 
 # 使用示例
@@ -11,7 +13,7 @@
 -   [Vue](https://codesandbox.io/s/qw-sdk-demo-vue-hxqhe?file=/src/App.vue)
 -   [React](https://codesandbox.io/s/qw-sdk-demo-react-fk63m?file=/src/App.js)
 
-# 安装方式
+# 安装
 
 ## 1、script 引入
 
@@ -44,11 +46,8 @@ const qw = new QwSdk({
 });
 
 qw.render({
-    page: 'channelCode', // 要渲染哪一个中台组件
+    page: 'channelCode', // 字符串，要渲染哪一个中台组件
     permission: ['00', '01'], // 权限点
-    callback: () => {
-        console.log('渲染完成~');
-    },
 });
 ```
 
@@ -64,6 +63,7 @@ export default function App() {
             <QwSdk
                 options={{
                     page: 'channelCode',
+                    permission: ['00', '01'],
                     // ...其他配置
                 }}
             />
@@ -76,16 +76,22 @@ export default function App() {
 
 [typings/index.d.ts](https://gitee.com/qx9/qw-sdk-demo/blob/master/typings/index.d.ts)
 
-# TODO
+# 可用命令
 
--   antd、react、react-dom 太大了能否分包、按需打包
--   能否使用更小的 preact
--   添加修改主题色方法或配置项
--   能否使用 redux（不行就 context）
--   如何跨域请求
-    -   cors-anywhere
-    -   在 BFF 配置允许跨域白名单
+-   `yarn dev` 本地运行
+-   `yarn build` 打包
 
 # 其他
 
--   仅作功能演示，为了简洁所以开发环境许多功能没有，比如 less、css module、typescript
+-   一些原因项目无法使用 redux，使用 context 管理全局状态
+
+# TODO
+
+-   体积优化
+    -   antd 按需打包
+    -   能否使用 webpack 的分包
+    -   能否使用更小的 preact
+-   添加修改主题色方法或配置项
+-   如何跨域请求？
+    -   cors-anywhere
+    -   在 BFF 配置允许跨域白名单

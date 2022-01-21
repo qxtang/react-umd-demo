@@ -6,35 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="企微中台 jssdk"/>
     <title>qw-sdk-demo</title>
-    <style type="text/css">
-        * {
-            box-sizing: border-box;
-        }
-
-        .container {
-            padding: 10px;
-        }
-
-        .btns {
-            display: flex;
-            align-items: center;
-        }
-
-        .btns button, .btns div {
-            margin-right: 5px;
-            padding: 0 5px;
-        }
-
-        #qw-container {
-            margin: 20px auto 0;
-            width: 800px;
-            max-width: 100vw;
-        }
-    </style>
 </head>
 
 <body>
-<div class="container">
+<div>
     <h1>我是接入方~</h1>
     <div class="btns">
         <div>
@@ -60,9 +35,6 @@
     qw.render({
         page: 'channelCode', // 要渲染哪一个中台组件
         permission: ['00', '01'], // 权限点
-        callback: () => {
-            console.log('渲染完成~');
-        },
     });
 
     changePageSelect.onchange = function (e) {
@@ -70,9 +42,6 @@
         qw.render({
             page: value,
             permission: ['00', '01'],
-            callback: () => {
-                console.log(value, '渲染完成~');
-            },
         });
     };
 

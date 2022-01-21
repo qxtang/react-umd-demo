@@ -2,10 +2,11 @@ export as namespace QwSdk;
 
 export default QwSdk;
 
-type QwComponentType = 'channelCode' | 'materialCenter' | 'greeting'
+type QwComponentType = 'empty' | 'channelCode' | 'materialCenter' | 'greeting' | string
 
 declare class QwSdk {
     constructor(options: QwSdk.QwSdkOptions);
+    options: QwSdk.QwSdkOptions;
     sayHello(): void;
     setPrimaryColor(color: string): void; // 设置主题颜色
     render(options: QwSdk.RenderOptions): void; // 执行渲染
@@ -18,8 +19,7 @@ declare namespace QwSdk {
     }
 
     interface RenderOptions {
-        page: QwComponentType,  // 渲染哪一个中台组件
-        permission?: string[],  // 中台权限点
-        callback?: () => any,   // 调用 react-dom.render 方法的回调
+        page: QwComponentType;  // 渲染哪一个中台组件
+        permission?: string[];  // 中台权限点
     }
 }

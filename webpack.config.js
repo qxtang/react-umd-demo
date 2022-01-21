@@ -21,18 +21,23 @@ module.exports = {
         },
     },
     resolve: {
-        extensions: ['.jsx', '.js', '.json'],
+        extensions: ['.tsx', '.jsx', '.js', '.json'],
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: 'babel-loader',
             },
             {
-                test: /\.css$/,
-                use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+                test: /\.less$/,
+                use: [
+                    (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader'
+                ],
             },
             {
                 test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,

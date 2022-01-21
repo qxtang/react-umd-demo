@@ -1,13 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Main from './Main';
+import types from '../typings';
 
 class QwSdk {
-    constructor(options = {}) {
+    options: types.QwSdkOptions;
+
+    constructor(options = { container: '' }) {
         this.options = options;
     }
 
-    setPrimaryColor(color) {
+    setPrimaryColor(color: string) {
         console.log(color);
     }
 
@@ -15,9 +18,8 @@ class QwSdk {
         console.log(new Date(), 'hello，我是企微 sdk!!!');
     }
 
-    render(options = {}) {
+    render(options = { page: 'empty' }) {
         const { container } = this.options;
-        const { callback = () => {} } = options;
         let node = null;
 
         if (!container) throw new Error(`配置缺少包裹节点: ${container}`);
@@ -29,7 +31,10 @@ class QwSdk {
             node = container;
         }
 
-        return render(<Main options={options}/>, node, callback);
+        return render(
+            React.createElement(Main, { options }),
+            node
+        );
     }
 }
 
