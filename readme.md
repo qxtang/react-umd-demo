@@ -76,7 +76,7 @@ export default function App() {
                 permission={['00', '01']}
                 className="abc"
                 style={{ color: 'red' }}
-                // ...其他参数
+                // ...其他配置
             />
         </div>
     );

@@ -25,5 +25,6 @@ declare namespace QwSdk {
         permission?: string[];  // 中台权限点
         className?: string; // 包裹元素 className
         style?: CSSProperties; // 包裹元素 style
+        theme?: Theme; // antd 主题配置
     }
 }
