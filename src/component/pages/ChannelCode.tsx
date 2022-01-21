@@ -22,6 +22,7 @@ const ChannelCode: React.FC = () => {
     return (
         <div>
             <Table
+                size="small"
                 title={() => (<h2>渠道码管理</h2>)}
                 rowKey={r => r.id}
                 dataSource={dataSource}
@@ -47,9 +48,9 @@ const ChannelCode: React.FC = () => {
                         key: 'opt',
                         render: () => {
                             return (
-                                <Button.Group>
+                                <Button.Group size="small">
                                     <Button onClick={openModal} type="primary">编辑</Button>
-                                    <Button onClick={openModal} danger>删除</Button>
+                                    <Button onClick={openModal} type="primary" ghost>删除</Button>
                                 </Button.Group>
                             );
                         }

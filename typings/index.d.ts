@@ -1,19 +1,22 @@
 import { CSSProperties } from 'react';
+import { Theme } from 'antd/lib/config-provider/context';
 
 export as namespace QwSdk;
 
 export default QwSdk;
 
-type PageType = 'notfound' | 'channelCode' | 'materialCenter' | 'greeting'
-
 declare class QwSdk {
     constructor(options: QwSdk.QwSdkOptions);
+
     sayHello(): void;
-    setPrimaryColor(color: string): void; // 设置主题颜色
+
+    setTheme(theme: Theme): void; // 设置主题颜色
     render(options: QwSdk.RenderOptions): void; // 执行渲染
 }
 
 declare namespace QwSdk {
+    type PageType = 'notfound' | 'channelCode' | 'materialCenter' | 'greeting'
+
     interface QwSdkOptions {
         container: string | HTMLElement; // 渲染节点 id 或 元素
     }

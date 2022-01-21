@@ -1,13 +1,13 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const ENV = process.env.NODE_ENV || 'development';
 const isDev = ENV !== 'production';
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'cheap-module-source-map' : 'source-map',
+    devtool: isDev && 'cheap-module-source-map',
     context: path.resolve(__dirname, 'src'),
     entry: './index.ts',
     output: {
@@ -36,7 +36,14 @@ module.exports = {
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
                     'css-loader',
                     'postcss-loader',
-                    'less-loader'
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                javascriptEnabled: true,
+                            }
+                        }
+                    }
                 ],
             },
             {
@@ -52,7 +59,15 @@ module.exports = {
             },
         ],
     },
-    plugins: isDev ? [new webpack.NoEmitOnErrorsPlugin()] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' })],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+        ],
+    },
+    plugins: isDev ? [] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' })],
     devServer: {
         port: 8002,
         host: '0.0.0.0',

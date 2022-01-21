@@ -19,7 +19,7 @@
         }
 
         .flex > * {
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         #qw-container {
@@ -42,8 +42,10 @@
             <option value="greeting">greeting</option>
         </select>
     </div>
-    <button id="btn1">sayHello</button>
-    <button id="btn2">修改主题颜色</button>
+    <div>
+        <label for="color">修改主题色：</label>
+        <input type="color" id="color" value="#40a9ff">
+    </div>
 </div>
 
 
@@ -52,8 +54,7 @@
 <script src="/dist/qwsdk.js"></script>
 <script>
     const select = document.querySelector('#select');
-    const btn1 = document.querySelector('#btn1');
-    const btn2 = document.querySelector('#btn2');
+    const color = document.querySelector('#color');
 
     const qw = new QwSdk({
         container: 'qw-container', // 容器元素 id
@@ -72,12 +73,11 @@
         });
     };
 
-    btn1.onclick = function () {
-        qw.sayHello();
-    };
-
-    btn2.onclick = function () {
-        qw.setPrimaryColor('#' + ('00000' + ((Math.random() * 0x1000000) << 0).toString(16)).substr(-6));
+    color.onchange = function (e) {
+        const value = e.target.value;
+        qw.setTheme({
+            primaryColor: value
+        });
     };
 </script>
 </body>

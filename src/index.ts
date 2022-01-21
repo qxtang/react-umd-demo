@@ -3,8 +3,10 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import Main from './Main';
 import types from '../typings';
+import { Theme } from 'antd/lib/config-provider/context';
+import Main from './Main';
+import { ConfigProvider } from 'antd';
 
 class QwSdk {
     options: types.QwSdkOptions;
@@ -13,9 +15,9 @@ class QwSdk {
         this.options = options;
     }
 
-    // TODO 修改主题色
-    setPrimaryColor(color: string) {
-        console.log(color);
+    // 设置 antd 主题
+    setTheme(theme: Theme) {
+        ConfigProvider.config({ theme });
     }
 
     sayHello() {

@@ -6,7 +6,7 @@ import './style/global.less';
 import NotFound from './component/common/NotFound';
 import Context from './context';
 
-// pages
+// pages TODO 异步导入
 import ChannelCode from './component/pages/ChannelCode';
 import MaterialCenter from './component/pages/MaterialCenter';
 import Greeting from './component/pages/Greeting';
