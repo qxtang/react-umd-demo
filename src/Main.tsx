@@ -1,6 +1,9 @@
+/**
+ * @description 主入口组件，同时也是 react 组件形式下导出给用户的组件
+ */
 import React, { useCallback } from 'react';
 import './style/global.less';
-import Empty from './component/common/Empty';
+import NotFound from './component/common/NotFound';
 
 // pages
 import ChannelCode from './component/pages/ChannelCode';
@@ -8,29 +11,29 @@ import MaterialCenter from './component/pages/MaterialCenter';
 import Greeting from './component/pages/Greeting';
 import QwSdk from '../typings';
 
-interface IProp {
-    options: QwSdk.RenderOptions
-}
-
 const RENDER_MAP = {
-    empty: <Empty/>,
+    notfound: <NotFound/>,
     channelCode: <ChannelCode/>,
     materialCenter: <MaterialCenter/>,
     greeting: <Greeting/>,
 };
 
-/**
- * @description 主入口组件，同时也是 react 组件形式下导出给用户的组件
- */
-const Main: React.FC<IProp> = (props) => {
-    const { options: { page = 'empty' } = {} } = props;
+const Main: React.FC<QwSdk.RenderOptions> = (props) => {
+    const {
+        page = 'notfound',
+        className = '',
+        style = {}
+    } = props;
 
     const renderContent = useCallback(() => {
-        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <Empty/>;
+        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <NotFound/>;
     }, [page]);
 
     return (
-        <div className="qw_sdk_demo_container">{renderContent()}</div>
+        <div
+            className={`qw_sdk_demo_container ${className}`}
+            style={style}
+        >{renderContent()}</div>
     );
 };
 

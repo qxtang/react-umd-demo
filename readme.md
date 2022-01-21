@@ -18,7 +18,8 @@
 ## 1、script 引入
 
 ```html
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.css" />
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.css"/>
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.min.js"></script>
 ```
 
@@ -35,6 +36,7 @@ npm install qw-sdk-demo
 添加一个容器
 
 ```html
+
 <div id="qw-container"></div>
 ```
 
@@ -48,6 +50,12 @@ const qw = new QwSdk({
 qw.render({
     page: 'channelCode', // 字符串，要渲染哪一个中台组件
     permission: ['00', '01'], // 权限点
+
+    // 自定义样式
+    style: {
+        border: '1px solid red'
+    },
+    className: 'abc'
 });
 ```
 
@@ -61,11 +69,11 @@ export default function App() {
     return (
         <div className="App">
             <QwSdk
-                options={{
-                    page: 'channelCode',
-                    permission: ['00', '01'],
-                    // ...其他配置
-                }}
+                page='channelCode'
+                permission={['00', '01']}
+                className='abc'
+                style={{ color: 'red' }}
+                // ...其他参数
             />
         </div>
     );
@@ -84,6 +92,7 @@ export default function App() {
 # 其他
 
 - 一些原因项目无法使用 redux，使用 context 管理全局状态
+- 为了减小 css 的体积不开 css module
 
 # TODO
 

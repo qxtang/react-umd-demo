@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Empty: React.FC = () => {
+const NotFound: React.FC = () => {
     return (
         <div>
             未找到页面
@@ -8,4 +8,4 @@ const Empty: React.FC = () => {
     );
 };
 
-export default Empty;
+export default NotFound;

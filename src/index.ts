@@ -1,11 +1,11 @@
+/**
+ * @description QwSdk类，导出给用户使用
+ */
 import React from 'react';
 import { render } from 'react-dom';
 import Main from './Main';
 import types from '../typings';
 
-/**
- * @description QwSdk类，导出给用户使用
- */
 class QwSdk {
     options: types.QwSdkOptions;
 
@@ -19,11 +19,11 @@ class QwSdk {
     }
 
     sayHello() {
-        console.log(new Date(), 'hello，我是企微 sdk!!!');
+        console.log(new Date(), 'hello，我是企微中台 sdk!!!');
     }
 
     // 生成渲染
-    render(options = { page: 'empty' }) {
+    render(options: types.RenderOptions) {
         const { container } = this.options;
         let node = null;
 
@@ -37,7 +37,7 @@ class QwSdk {
         }
 
         return render(
-            React.createElement(Main, { options }),
+            React.createElement(Main, options),
             node
         );
     }
