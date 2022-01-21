@@ -1,8 +1,11 @@
 import React, { useCallback } from 'react';
-import './style/global.css';
-import ChannelCode from './component/ChannelCode';
-import MaterialCenter from './component/MaterialCenter';
-import Greeting from './component/Greeting';
+import './style/global.less';
+import Empty from './component/common/Empty';
+
+// pages
+import ChannelCode from './component/pages/ChannelCode';
+import MaterialCenter from './component/pages/MaterialCenter';
+import Greeting from './component/pages/Greeting';
 
 const RENDER_MAP = {
     channelCode: <ChannelCode/>,
@@ -14,7 +17,7 @@ const Main = (props) => {
     const { options: { page = '' } = {} } = props;
 
     const renderContent = useCallback(() => {
-        return RENDER_MAP[page] || '未知页面';
+        return RENDER_MAP[page] || <Empty />;
     }, [page]);
 
     return (
