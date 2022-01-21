@@ -1,9 +1,14 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const ENV = process.env.NODE_ENV || 'development';
 const isDev = ENV !== 'production';
+
+const commonPlugins = [
+    // new BundleAnalyzerPlugin()
+];
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
@@ -22,6 +27,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+
+        // 使用 preact 代替
+        alias: {
+            'react': 'preact/compat',
+            'react-dom': 'preact/compat'
+        }
     },
     module: {
         rules: [
@@ -67,7 +78,7 @@ module.exports = {
             }),
         ],
     },
-    plugins: isDev ? [] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' })],
+    plugins: isDev ? [...commonPlugins] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' }), ...commonPlugins],
     devServer: {
         port: 8002,
         host: '0.0.0.0',

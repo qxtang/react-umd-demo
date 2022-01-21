@@ -413,6 +413,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@polka/url@^1.0.0-next.20":
+  version "1.0.0-next.21"
+  resolved "https://registry.npmmirror.com/@polka/url/download/@polka/url-1.0.0-next.21.tgz?cache=0&sync_timestamp=1633093101880&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40polka%2Furl%2Fdownload%2F%40polka%2Furl-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
+  integrity sha1-XeWiOFo1MJQn9gEZkrVEUU1VmqE=
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "https://registry.npmmirror.com/@types/body-parser/download/@types/body-parser-1.19.2.tgz?cache=0&sync_timestamp=1637265217498&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fbody-parser%2Fdownload%2F%40types%2Fbody-parser-1.19.2.tgz"
@@ -826,7 +831,12 @@ acorn-jsx@^5.3.1:
   resolved "https://registry.nlark.com/acorn-jsx/download/acorn-jsx-5.3.2.tgz"
   integrity sha1-ftW7VZCLOy8bxVxq8WU7rafweTc=
 
-acorn@^8.4.1, acorn@^8.7.0:
+acorn-walk@^8.0.0:
+  version "8.2.0"
+  resolved "https://registry.nlark.com/acorn-walk/download/acorn-walk-8.2.0.tgz?cache=0&sync_timestamp=1630916608758&other_urls=https%3A%2F%2Fregistry.nlark.com%2Facorn-walk%2Fdownload%2Facorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
+  integrity sha1-dBIQ8uJCZFRQiFOi9E0KuDt/acE=
+
+acorn@^8.0.4, acorn@^8.4.1, acorn@^8.7.0:
   version "8.7.0"
   resolved "https://registry.npmmirror.com/acorn/download/acorn-8.7.0.tgz"
   integrity sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==
@@ -1160,7 +1170,7 @@ chalk@^2.0.0:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.0.0:
+chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/chalk/download/chalk-4.1.2.tgz"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -1241,7 +1251,7 @@ commander@^2.20.0:
   resolved "https://registry.npmmirror.com/commander/download/commander-2.20.3.tgz"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@^7.0.0:
+commander@^7.0.0, commander@^7.2.0:
   version "7.2.0"
   resolved "https://registry.npmjs.org/commander/-/commander-7.2.0.tgz"
   integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
@@ -1526,6 +1536,11 @@ dom-align@^1.7.0:
   version "1.12.2"
   resolved "https://registry.nlark.com/dom-align/download/dom-align-1.12.2.tgz"
   integrity sha1-D4Fk69DJwhsMeQMQSTzYVYkqzUs=
+
+duplexer@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npm.taobao.org/duplexer/download/duplexer-0.1.2.tgz#3abe43aef3835f8ae077d136ddce0f276b0400e6"
+  integrity sha1-Or5DrvODX4rgd9E23c4PJ2sEAOY=
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -2060,6 +2075,13 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.4, graceful-fs@^4.2.6, graceful-fs@^4.2.9:
   version "4.2.9"
   resolved "https://registry.npmmirror.com/graceful-fs/download/graceful-fs-4.2.9.tgz"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
+
+gzip-size@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmmirror.com/gzip-size/download/gzip-size-6.0.0.tgz#065367fd50c239c0671cbcbad5be3e2eeb10e462"
+  integrity sha1-BlNn/VDCOcBnHLy61b4+LusQ5GI=
+  dependencies:
+    duplexer "^0.1.2"
 
 handle-thing@^2.0.0:
   version "2.0.1"
@@ -2609,7 +2631,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.npm.taobao.org/lodash.merge/download/lodash.merge-4.6.2.tgz"
   integrity sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=
 
-lodash@^4.17.14, lodash@^4.17.21:
+lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/download/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -2745,6 +2767,11 @@ moment@^2.24.0, moment@^2.25.3:
   version "2.29.1"
   resolved "https://registry.npmmirror.com/moment/download/moment-2.29.1.tgz"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+
+mrmime@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/mrmime/download/mrmime-1.0.0.tgz#14d387f0585a5233d291baba339b063752a2398b"
+  integrity sha1-FNOH8FhaUjPSkbq6M5sGN1KiOYs=
 
 ms@2.0.0:
   version "2.0.0"
@@ -2932,6 +2959,11 @@ open@^8.0.9:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
+
+opener@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.nlark.com/opener/download/opener-1.5.2.tgz#5d37e1f35077b9dcac4301372271afdeb2a13598"
+  integrity sha1-XTfh81B3udysQwE3InGv3rKhNZg=
 
 optionator@^0.9.1:
   version "0.9.1"
@@ -3125,6 +3157,11 @@ postcss@^8.2.15:
     nanoid "^3.1.30"
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
+
+preact@^10.6.4:
+  version "10.6.4"
+  resolved "https://registry.npmmirror.com/preact/download/preact-10.6.4.tgz#ad12c409ff1b4316158486e0a7b8d43636f7ced8"
+  integrity sha512-WyosM7pxGcndU8hY0OQlLd54tOU+qmG45QXj2dAYrL11HoyU/EzOSTlpJsirbBr1QW7lICxSsVJJmcmUglovHQ==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -3893,6 +3930,15 @@ signal-exit@^3.0.3:
   resolved "https://registry.npmmirror.com/signal-exit/download/signal-exit-3.0.6.tgz"
   integrity sha512-sDl4qMFpijcGw22U5w63KmD3cZJfBuFlVNbVMKje2keoKML7X2UzWbc4XrmEbDwg0NXJc3yv4/ox7b+JWb57kQ==
 
+sirv@^1.0.7:
+  version "1.0.19"
+  resolved "https://registry.npmmirror.com/sirv/download/sirv-1.0.19.tgz#1d73979b38c7fe91fcba49c85280daa9c2363b49"
+  integrity sha512-JuLThK3TnZG1TAKDwNIqNq6QA2afLOCcm+iE8D1Kj3GA40pSPsxQjjJl0J8X3tsR7T+CP1GavpzLwYkgVLWrZQ==
+  dependencies:
+    "@polka/url" "^1.0.0-next.20"
+    mrmime "^1.0.0"
+    totalist "^1.0.0"
+
 slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.nlark.com/slash/download/slash-3.0.0.tgz"
@@ -4124,6 +4170,11 @@ toidentifier@1.0.1:
   resolved "https://registry.npmmirror.com/toidentifier/download/toidentifier-1.0.1.tgz?cache=0&sync_timestamp=1636938467744&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftoidentifier%2Fdownload%2Ftoidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
+totalist@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/totalist/download/totalist-1.1.0.tgz#a4d65a3e546517701e3e5c37a47a70ac97fe56df"
+  integrity sha1-pNZaPlRlF3AePlw3pHpwrJf+Vt8=
+
 tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmmirror.com/tslib/download/tslib-1.14.1.tgz"
@@ -4236,6 +4287,21 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha1-wdjRSTFtPqhShIiVy2oL/oh7h98=
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webpack-bundle-analyzer@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmmirror.com/webpack-bundle-analyzer/download/webpack-bundle-analyzer-4.5.0.tgz#1b0eea2947e73528754a6f9af3e91b2b6e0f79d5"
+  integrity sha512-GUMZlM3SKwS8Z+CKeIFx7CVoHn3dXFcUAjT/dcZQQmfSZGvitPfMob2ipjai7ovFFqPvTqkEZ/leL4O0YOdAYQ==
+  dependencies:
+    acorn "^8.0.4"
+    acorn-walk "^8.0.0"
+    chalk "^4.1.0"
+    commander "^7.2.0"
+    gzip-size "^6.0.0"
+    lodash "^4.17.20"
+    opener "^1.5.2"
+    sirv "^1.0.7"
+    ws "^7.3.1"
 
 webpack-cli@^4.9.1:
   version "4.9.1"
@@ -4390,6 +4456,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.nlark.com/wrappy/download/wrappy-1.0.2.tgz?cache=0&sync_timestamp=1619133505879&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwrappy%2Fdownload%2Fwrappy-1.0.2.tgz"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
+
+ws@^7.3.1:
+  version "7.5.6"
+  resolved "https://registry.npmmirror.com/ws/download/ws-7.5.6.tgz#e59fc509fb15ddfb65487ee9765c5a51dec5fe7b"
+  integrity sha512-6GLgCqo2cy2A2rjCNFlxQS6ZljG/coZfZXclldI8FB/1G3CCI36Zd8xy2HrFVACi8tfk5XrgLQEk+P0Tnz9UcA==
 
 ws@^8.1.0:
   version "8.4.2"

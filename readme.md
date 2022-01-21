@@ -4,22 +4,21 @@
 
 # 解决的问题
 
-- 接入方调用中台前端组件不受技术栈限制
-- 解决 iframe 的痛点：使用起来不友好、各种隔离
+-   接入方调用中台前端组件不受技术栈限制
+-   解决 iframe 的痛点：使用起来不友好、各种隔离
 
 # 使用示例
 
-- [静态页面](https://codesandbox.io/s/qw-sdk-demo-static-shc61?file=/index.html)
-- [Vue](https://codesandbox.io/s/qw-sdk-demo-vue-hxqhe?file=/src/App.vue)
-- [React](https://codesandbox.io/s/qw-sdk-demo-react-fk63m?file=/src/App.js)
+-   [静态页面](https://codesandbox.io/s/qw-sdk-demo-static-shc61?file=/index.html)
+-   [Vue](https://codesandbox.io/s/qw-sdk-demo-vue-hxqhe?file=/src/App.vue)
+-   [React](https://codesandbox.io/s/qw-sdk-demo-react-fk63m?file=/src/App.js)
 
 # 安装
 
 ## 1、script 引入
 
 ```html
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.css" />
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo/dist/qwsdk.min.js"></script>
 ```
 
@@ -29,6 +28,11 @@
 npm install qw-sdk-demo
 ```
 
+```js
+import 'qw-sdk-demo/dist/qwsdk.css';
+import QwSdk from 'qw-sdk-demo';
+```
+
 # 使用
 
 ## 方式一
@@ -36,7 +40,6 @@ npm install qw-sdk-demo
 添加一个容器
 
 ```html
-
 <div id="qw-container"></div>
 ```
 
@@ -53,9 +56,9 @@ qw.render({
 
     // 自定义样式
     style: {
-        border: '1px solid red'
+        border: '1px solid red',
     },
-    className: 'abc'
+    className: 'abc',
 });
 ```
 
@@ -69,9 +72,9 @@ export default function App() {
     return (
         <div className="App">
             <QwSdk
-                page='channelCode'
+                page="channelCode"
                 permission={['00', '01']}
-                className='abc'
+                className="abc"
                 style={{ color: 'red' }}
                 // ...其他参数
             />
@@ -86,21 +89,20 @@ export default function App() {
 
 # 可用命令
 
-- `yarn dev` 本地运行
-- `yarn build` 打包
+-   `yarn dev` 本地运行
+-   `yarn build` 打包
 
 # 其他
 
-- 一些原因项目无法使用 redux，使用 context 管理全局状态
-- 为了减小 css 的体积不开 css module
+-   一些原因项目无法使用 redux，使用 context 管理全局状态
+-   为了减小 css 的体积不用 css module
+-   使用 preact/compat 代替 react 以减小打包体积
 
 # TODO
 
-- 体积优化
-    - antd 按需打包
-    - 能否使用 webpack 的分包
-    - 能否使用更小的 preact
-- 添加修改主题色方法或配置项
-- 如何跨域请求？
-    - cors-anywhere
-    - 在 BFF 配置允许跨域白名单
+-   体积优化
+    -   antd 按需打包
+    -   能否使用 webpack 的分包
+    -   能否使用更小的 preact
+-   跨域请求
+-   不污染调用方样式
