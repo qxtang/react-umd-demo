@@ -11,4 +11,4 @@ webpackConfig.externals = {
     'react-dom': 'commonjs react-dom',
 };
 
-module.exports = webpackConfig;
+export default webpackConfig;

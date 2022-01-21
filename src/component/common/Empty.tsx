@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Empty = () => {
+const Empty: React.FC = () => {
     return (
         <div>
             未找到页面

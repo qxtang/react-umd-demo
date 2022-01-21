@@ -9,7 +9,7 @@ module.exports = {
     mode: isDev ? 'development' : 'production',
     devtool: isDev ? 'cheap-module-source-map' : 'source-map',
     context: path.resolve(__dirname, 'src'),
-    entry: './index.js',
+    entry: './index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist',

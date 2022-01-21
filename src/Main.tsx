@@ -13,24 +13,21 @@ interface IProp {
 }
 
 const RENDER_MAP = {
-    empty: <Empty/>,
-    channelCode: <ChannelCode/>,
-    materialCenter: <MaterialCenter/>,
-    greeting: <Greeting/>,
+    empty: <Empty />,
+    channelCode: <ChannelCode />,
+    materialCenter: <MaterialCenter />,
+    greeting: <Greeting />,
 };
 
 const Main: React.FC<IProp> = (props) => {
     const { options: { page = 'empty' } = {} } = props;
 
     const renderContent = useCallback(() => {
-        return RENDER_MAP[page] || <Empty/>;
+        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <Empty />;
     }, [page]);
 
     return (
-        <div className="qwsdk_container">
-            <h1>QW SDK DEMO</h1>
-            <div className="border">{renderContent()}</div>
-        </div>
+        <div className="qw_sdk_demo_container">{renderContent()}</div>
     );
 };
 

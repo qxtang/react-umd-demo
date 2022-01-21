@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'antd/lib/button';
 
-const ChannelCode = () => {
+const ChannelCode: React.FC = () => {
     return (
         <div>
             <div>ChannelCode 页面</div>

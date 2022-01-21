@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MaterialCenter = () => {
+const MaterialCenter: React.FC = () => {
     return <div>MaterialCenter 页面</div>;
 };
 
