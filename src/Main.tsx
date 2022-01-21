@@ -4,6 +4,7 @@
 import React, { useCallback } from 'react';
 import './style/global.less';
 import NotFound from './component/common/NotFound';
+import Context from './context';
 
 // pages
 import ChannelCode from './component/pages/ChannelCode';
@@ -30,10 +31,12 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     }, [page]);
 
     return (
-        <div
-            className={`qw_sdk_demo_container ${className}`}
-            style={style}
-        >{renderContent()}</div>
+        <Context.Provider value={{}}>
+            <div
+                className={`qw_sdk_demo_container ${className}`}
+                style={style}
+            >{renderContent()}</div>
+        </Context.Provider>
     );
 };
 
