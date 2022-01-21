@@ -13,17 +13,20 @@ interface IProp {
 }
 
 const RENDER_MAP = {
-    empty: <Empty />,
-    channelCode: <ChannelCode />,
-    materialCenter: <MaterialCenter />,
-    greeting: <Greeting />,
+    empty: <Empty/>,
+    channelCode: <ChannelCode/>,
+    materialCenter: <MaterialCenter/>,
+    greeting: <Greeting/>,
 };
 
+/**
+ * @description 主入口组件，同时也是 react 组件形式下导出给用户的组件
+ */
 const Main: React.FC<IProp> = (props) => {
     const { options: { page = 'empty' } = {} } = props;
 
     const renderContent = useCallback(() => {
-        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <Empty />;
+        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <Empty/>;
     }, [page]);
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MaterialCenter: React.FC = () => {
-    return <div>MaterialCenter 页面</div>;
+    return <div>素材管理</div>;
 };
 
 export default MaterialCenter;

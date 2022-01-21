@@ -3,6 +3,9 @@ import { render } from 'react-dom';
 import Main from './Main';
 import types from '../typings';
 
+/**
+ * @description QwSdk类，导出给用户使用
+ */
 class QwSdk {
     options: types.QwSdkOptions;
 
@@ -10,6 +13,7 @@ class QwSdk {
         this.options = options;
     }
 
+    // TODO 修改主题色
     setPrimaryColor(color: string) {
         console.log(color);
     }
@@ -18,6 +22,7 @@ class QwSdk {
         console.log(new Date(), 'hello，我是企微 sdk!!!');
     }
 
+    // 生成渲染
     render(options = { page: 'empty' }) {
         const { container } = this.options;
         let node = null;

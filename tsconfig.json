@@ -8,8 +8,11 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "jsx": "preserve",
-    "lib": ["dom", "esnext"],
-    "baseUrl": "./",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "baseUrl": "./"
   },
   "typeRoots": [
     "node_modules/@types",
@@ -17,6 +20,6 @@
   ],
   "exclude": [
     "node_modules",
-    "dist",
+    "dist"
   ]
 }
