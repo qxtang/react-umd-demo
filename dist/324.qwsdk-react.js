@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkQwSdk=self.webpackChunkQwSdk||[]).push([[324],{5324:function(e,n,u){u.r(n);var k=u(6689),l=u.n(k);n.default=()=>l().createElement("div",null,"素材管理")}}]);

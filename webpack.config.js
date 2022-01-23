@@ -17,7 +17,7 @@ module.exports = {
     entry: './index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/dist',
+        publicPath: isDev ? '/dist/' : '//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/',
         filename: isDev ? 'qwsdk.js' : 'qwsdk.min.js',
         library: {
             name: 'QwSdk',
@@ -77,9 +77,6 @@ module.exports = {
                 extractComments: false,
             }),
         ],
-        // splitChunks: {
-        //     chunks: 'all',
-        // }
     },
     plugins: isDev ? [...commonPlugins] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' }), ...commonPlugins],
     devServer: {

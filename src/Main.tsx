@@ -6,41 +6,34 @@ import './style/global.less';
 import { ConfigProvider } from 'antd';
 import QwSdk from '../typings';
 
-// pages TODO 异步导入
-import ChannelCode from './component/pages/ChannelCode';
-import MaterialCenter from './component/pages/MaterialCenter';
-const Greeting = React.lazy(() => import('./component/pages/Greeting'));
-import NotFound from './component/common/NotFound';
-
-const RENDER_MAP = {
-    notfound: NotFound,
-    channelCode: ChannelCode,
-    materialCenter: MaterialCenter,
-    greeting: Greeting,
-};
-
 const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     const {
-        page = 'notfound',
+        page = 'NotFound',
         className = '',
         style = {},
         theme = {}
     } = props;
 
-    const renderContent = useCallback(() => {
-        const C = RENDER_MAP[page as keyof typeof RENDER_MAP] || NotFound;
-        return <C/>;
-    }, [page]);
-
+    // 设置 antd 主题
     useEffect(() => {
         ConfigProvider.config({ theme });
     }, [theme]);
+
+    // 懒加载需要渲染的中台页面
+    const pageRender = useCallback(() => {
+        const Result = React.lazy(() => import(`./component/pages/${page}`));
+        return (<Result/>);
+    }, [page]);
 
     return (
         <div
             className={`qw_sdk_demo_container ${className}`}
             style={style}
-        >{renderContent()}</div>
+        >
+            <React.Suspense fallback={<div>loading...</div>}>
+                {pageRender()}
+            </React.Suspense>
+        </div>
     );
 };
 

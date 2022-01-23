@@ -4,6 +4,7 @@ const webpackConfig = Object.create(require('./webpack.config.js'));
 
 webpackConfig.entry = './Main.tsx';
 webpackConfig.output = Object.create(webpackConfig.output);
+webpackConfig.output.publicPath = '/dist/';
 webpackConfig.output.filename = 'qwsdk-react.js';
 
 // 使用 commonjs 规范
