@@ -5,6 +5,7 @@ import React, { useCallback, useEffect } from 'react';
 import './style/global.less';
 import { ConfigProvider } from 'antd';
 import QwSdk from '../typings';
+import { isEmpty } from 'lodash'
 
 const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     const {
@@ -16,7 +17,9 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
 
     // 设置 antd 主题
     useEffect(() => {
-        ConfigProvider.config({ theme });
+        if (!isEmpty(theme)) {
+            ConfigProvider.config({ theme });
+        }
     }, [theme]);
 
     // 懒加载需要渲染的中台页面
