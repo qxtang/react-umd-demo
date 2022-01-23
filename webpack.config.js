@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist',
-        filename: 'qwsdk.js',
+        filename: isDev ? 'qwsdk.js' : 'qwsdk.min.js',
         library: {
             name: 'QwSdk',
             type: 'umd',

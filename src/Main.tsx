@@ -3,21 +3,20 @@
  */
 import React, { useCallback, useEffect } from 'react';
 import './style/global.less';
-import NotFound from './component/common/NotFound';
-import Context from './context';
 import { ConfigProvider } from 'antd';
+import QwSdk from '../typings';
 
 // pages TODO 异步导入
 import ChannelCode from './component/pages/ChannelCode';
 import MaterialCenter from './component/pages/MaterialCenter';
-import Greeting from './component/pages/Greeting';
-import QwSdk from '../typings';
+const Greeting = React.lazy(() => import('./component/pages/Greeting'));
+import NotFound from './component/common/NotFound';
 
 const RENDER_MAP = {
-    notfound: <NotFound/>,
-    channelCode: <ChannelCode/>,
-    materialCenter: <MaterialCenter/>,
-    greeting: <Greeting/>,
+    notfound: NotFound,
+    channelCode: ChannelCode,
+    materialCenter: MaterialCenter,
+    greeting: Greeting,
 };
 
 const Main: React.FC<QwSdk.RenderOptions> = (props) => {
@@ -29,7 +28,8 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     } = props;
 
     const renderContent = useCallback(() => {
-        return RENDER_MAP[page as keyof typeof RENDER_MAP] || <NotFound/>;
+        const C = RENDER_MAP[page as keyof typeof RENDER_MAP] || NotFound;
+        return <C/>;
     }, [page]);
 
     useEffect(() => {
@@ -37,12 +37,10 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     }, [theme]);
 
     return (
-        <Context.Provider value={{}}>
-            <div
-                className={`qw_sdk_demo_container ${className}`}
-                style={style}
-            >{renderContent()}</div>
-        </Context.Provider>
+        <div
+            className={`qw_sdk_demo_container ${className}`}
+            style={style}
+        >{renderContent()}</div>
     );
 };
 

@@ -29,11 +29,11 @@ class QwSdk {
         const { container } = this.options;
         let node = null;
 
-        if (!container) throw new Error(`配置缺少包裹节点: ${container}`);
+        if (!container) throw new Error(`配置缺少容器节点: ${container}`);
 
         if (!(container instanceof HTMLElement)) {
             node = window.document.getElementById(container);
-            if (!node) throw new Error(`包裹节点未找到: ${container}`);
+            if (!node) throw new Error(`容器节点未找到: ${container}`);
         } else {
             node = container;
         }

@@ -94,12 +94,11 @@ export default function App() {
 
 # 其他
 
--   一些原因项目无法使用 redux，使用 context 管理全局状态
 -   为了减小 css 的体积不用 css module
 -   使用 preact/compat 代替 react 以减小打包体积
 
 # TODO
 
--   能否使用 webpack 的分包
--   跨域请求
--   如何零污染调用方样式
+-   redux
+-   跨域鉴权
+-   如何零污染接入方样式

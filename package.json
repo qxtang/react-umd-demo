@@ -16,7 +16,8 @@
   "types": "typings/index.d.ts",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
-    "build": "rimraf ./dist && cross-env NODE_ENV=production webpack && cross-env NODE_ENV=production webpack --config webpack.config.comp.js && cross-env NODE_ENV=production webpack --config webpack.config.mini.js",
+    "build:react": "cross-env NODE_ENV=production webpack --config webpack.config.react.js",
+    "build": "rimraf ./dist && cross-env NODE_ENV=production webpack && yarn build:react",
     "lint": "eslint src"
   },
   "files": [
