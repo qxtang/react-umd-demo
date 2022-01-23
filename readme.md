@@ -19,7 +19,7 @@
 
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css" />
-<script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
 ## 2、npm 安装
@@ -99,6 +99,6 @@ export default function App() {
 
 # TODO
 
-- redux 的使用
-- 跨域鉴权
-- 如何零污染接入方样式
+- 全局状态如何管理：redux、context、useReducer？
+- 跨域鉴权？
+- 如何零污染接入方样式？
