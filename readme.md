@@ -1,28 +1,28 @@
 # 天下苦 iframe 久矣
 
-一个中台前端能力复用解决方案项目 demo，以公司的企微中台产品为例
+将业务组件打包成 sdk 项目 demo，并且不受接入方技术栈限制，达到一次编写，处处运行，以公司的企微中台产品为例
 
 # 解决的问题
 
-- 开发环境统一使用 react 技术栈，接入方调用时不受技术栈限制
-- 解决 iframe 的痛点：对接不友好、各种隔离
+-   iframe 的痛点：各种隔离、页面刷新状态丢失、对接方式不友好等问题（收发消息大部分靠 postMessage）
+-   开发环境统一使用 react 技术栈，接入方调用时不受技术栈限制
 
 # 使用示例
 
-- [静态页面](https://codesandbox.io/s/qw-sdk-demo-static-shc61?file=/index.html)
-- [Vue](https://codesandbox.io/s/qw-sdk-demo-vue-hxqhe?file=/src/App.vue)
-- [React](https://codesandbox.io/s/qw-sdk-demo-react-fk63m?file=/src/App.js)
+-   [静态页面](https://codesandbox.io/s/qw-sdk-demo-static-shc61?file=/index.html)
+-   [Vue](https://codesandbox.io/s/qw-sdk-demo-vue-hxqhe?file=/src/App.vue)
+-   [React](https://codesandbox.io/s/qw-sdk-demo-react-fk63m?file=/src/App.js)
 
 # 安装
 
-## 1、script 引入
+## 方式一：script 引入
 
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css" />
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
-## 2、npm 安装
+## 方式二：npm 安装
 
 ```sh
 npm install qw-sdk-demo
@@ -89,16 +89,14 @@ export default function App() {
 
 # 可用命令
 
-- `yarn dev` 本地运行
-- `yarn build` 打包
+-   `yarn dev` 本地运行
+-   `yarn build` 打包
 
 # 其他
 
-- 为了减小 css 的体积不用 css module
-- 使用 preact/compat 代替 react 以减小打包体积
+-   使用 preact/compat 代替 react 以减小打包体积
 
 # TODO
 
-- 全局状态如何管理：redux、context、useReducer？
-- 跨域鉴权？
-- 如何零污染接入方样式？
+-   跨域鉴权？
+-   如何零污染接入方样式？
