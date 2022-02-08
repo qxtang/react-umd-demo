@@ -1,7 +1,12 @@
 import React from 'react';
 import { Table, Button, Modal } from 'antd';
 
-const ChannelCode: React.FC = () => {
+interface IProp {
+  onGetChannelInfoBtnClick?: (info: any) => void;
+}
+
+const ChannelCode: React.FC<IProp> = (props) => {
+  const { onGetChannelInfoBtnClick = () => { } } = props;
 
   const dataSource = new Array(20).fill(null).map((_, index) => {
     index += 1;
@@ -9,13 +14,13 @@ const ChannelCode: React.FC = () => {
       id: index,
       name: `渠道码${index}`,
       proj_name: `项目${index}`,
-      status: Math.random() > 0.5 ? '正常' : '异常'
+      status: Math.random() > 0.5 ? '正常' : '异常',
     };
   });
 
   const openModal = () => {
     Modal.info({
-      title: '打开弹窗'
+      title: '打开弹窗',
     });
   };
 
@@ -23,8 +28,8 @@ const ChannelCode: React.FC = () => {
     <div>
       <Table
         size="small"
-        title={() => (<h2>渠道码管理</h2>)}
-        rowKey={r => r.id}
+        title={() => <h2>渠道码管理</h2>}
+        rowKey={(r) => r.id}
         dataSource={dataSource}
         columns={[
           {
@@ -46,14 +51,21 @@ const ChannelCode: React.FC = () => {
             title: '操作',
             dataIndex: 'opt',
             key: 'opt',
-            render: () => {
+            render: (_, record) => {
               return (
                 <Button.Group size="small">
-                  <Button onClick={openModal} type="primary">编辑</Button>
-                  <Button onClick={openModal} type="primary" ghost>删除</Button>
+                  <Button onClick={openModal} type="primary">
+                    编辑
+                  </Button>
+                  <Button onClick={() => onGetChannelInfoBtnClick(record)} type="primary">
+                    获取信息
+                  </Button>
+                  <Button onClick={openModal} type="primary" danger ghost>
+                    删除
+                  </Button>
                 </Button.Group>
               );
-            }
+            },
           },
         ]}
       />

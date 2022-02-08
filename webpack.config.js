@@ -44,7 +44,7 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader, // 开发模式用 style-loader 才支持热更
           'css-loader',
           'postcss-loader',
           {

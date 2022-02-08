@@ -28,5 +28,10 @@ declare namespace QwSdk {
     className?: string; // 包裹元素 className
     style?: CSSProperties; // 包裹元素 style
     theme?: Theme; // antd 主题配置
+
+    // 传给页面组件的属性
+    pageProps?: {
+      onGetChannelInfoBtnClick?: (info: any) => void; // 渠道码页面获取渠道码信息按钮点击事件，用于测试传入自定义事件
+    }
   }
 }

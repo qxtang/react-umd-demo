@@ -12,7 +12,8 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     page = 'NotFound',
     className = '',
     style = {},
-    theme = {}
+    theme = {},
+    pageProps = {}
   } = props;
 
   // 设置 antd 主题
@@ -25,7 +26,7 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
   // 懒加载需要渲染的中台页面
   const pageRender = useCallback(() => {
     const Result = React.lazy(() => import(`./component/pages/${page}`));
-    return (<Result/>);
+    return (<Result {...pageProps}/>);
   }, [page]);
 
   return (
