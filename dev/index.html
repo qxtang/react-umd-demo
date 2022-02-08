@@ -52,32 +52,32 @@
 
 <script src="/dist/qwsdk.js"></script>
 <script>
-    const select = document.querySelector('#select');
-    const color = document.querySelector('#color');
+  const select = document.querySelector('#select');
+  const color = document.querySelector('#color');
 
-    const qw = new QwSdk({
-        container: 'qw-container', // 容器元素 id
-    });
+  const qw = new QwSdk({
+    container: 'qw-container', // 容器元素 id
+  });
 
+  qw.render({
+    page: 'ChannelCode', // 要渲染哪一个中台组件
+    permission: ['00', '01'], // 权限点
+  });
+
+  select.onchange = function (e) {
+    const value = e.target.value;
     qw.render({
-        page: 'ChannelCode', // 要渲染哪一个中台组件
-        permission: ['00', '01'], // 权限点
+      page: value,
+      permission: ['00', '01'],
     });
+  };
 
-    select.onchange = function (e) {
-        const value = e.target.value;
-        qw.render({
-            page: value,
-            permission: ['00', '01'],
-        });
-    };
-
-    color.onchange = function (e) {
-        const value = e.target.value;
-        qw.setTheme({
-            primaryColor: value
-        });
-    };
+  color.onchange = function (e) {
+    const value = e.target.value;
+    qw.setTheme({
+      primaryColor: value
+    });
+  };
 </script>
 </body>
 
