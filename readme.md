@@ -18,7 +18,6 @@
 ## 方式一：script 引入
 
 ```html
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css"/>
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
@@ -29,7 +28,6 @@ npm install qw-sdk-demo
 ```
 
 ```js
-import 'qw-sdk-demo/dist/qwsdk.css';
 import QwSdk from 'qw-sdk-demo';
 ```
 
@@ -66,7 +64,6 @@ qw.render({
 
 ```jsx
 import QwSdk from 'qw-sdk-demo/dist/qwsdk-react';
-import 'qw-sdk-demo/dist/qwsdk.css';
 
 export default function App() {
   return (

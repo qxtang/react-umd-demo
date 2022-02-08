@@ -6,6 +6,9 @@ import './style/global.less';
 import { ConfigProvider } from 'antd';
 import QwSdk from '../typings';
 import { isEmpty } from 'lodash';
+import { initStyle } from './utils/tools';
+
+initStyle();
 
 const Main: React.FC<QwSdk.RenderOptions> = (props) => {
   const {

@@ -57,7 +57,7 @@ const ChannelCode: React.FC<IProp> = (props) => {
                   <Button onClick={openModal} type="primary">
                     编辑
                   </Button>
-                  <Button onClick={() => onGetChannelInfoBtnClick(record)} type="primary">
+                  <Button onClick={() => onGetChannelInfoBtnClick(record)} type="primary" ghost>
                     获取信息
                   </Button>
                   <Button onClick={openModal} type="primary" danger ghost>
