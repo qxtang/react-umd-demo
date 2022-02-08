@@ -18,7 +18,7 @@
 ## 方式一：script 引入
 
 ```html
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css"/>
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
@@ -47,18 +47,18 @@ import QwSdk from 'qw-sdk-demo';
 
 ```javascript
 const qw = new QwSdk({
-    container: 'qw-container', // 容器元素 id
+  container: 'qw-container', // 容器元素 id
 });
 
 qw.render({
-    page: 'ChannelCode', // 字符串，要渲染哪一个中台组件
-    permission: ['00', '01'], // 权限点
+  page: 'ChannelCode', // 字符串，要渲染哪一个中台组件
+  permission: ['00', '01'], // 权限点
 
-    // 自定义样式
-    style: {
-        border: '1px solid red',
-    },
-    className: 'abc',
+  // 自定义样式
+  style: {
+    border: '1px solid red',
+  },
+  className: 'abc',
 });
 ```
 
@@ -69,17 +69,17 @@ import QwSdk from 'qw-sdk-demo/dist/qwsdk-react';
 import 'qw-sdk-demo/dist/qwsdk.css';
 
 export default function App() {
-    return (
-        <div className="App">
-            <QwSdk
-                page="ChannelCode"
-                permission={['00', '01']}
-                className="abc"
-                style={{ color: 'red' }}
-                // ...其他配置
-            />
-        </div>
-    );
+  return (
+    <div className="App">
+      <QwSdk
+        page="ChannelCode"
+        permission={['00', '01']}
+        className="abc"
+        style={{ color: 'red' }}
+        // ...其他配置
+      />
+    </div>
+  );
 }
 ```
 
@@ -100,3 +100,4 @@ export default function App() {
 
 - 跨域鉴权？
 - 如何零污染接入方样式？
+- 接入方给 sdk 中的元素绑定事件？
