@@ -97,4 +97,3 @@ export default function App() {
 
 - 跨域鉴权？
 - 如何零污染接入方样式？
-- 接入方给 sdk 中的元素绑定事件？
