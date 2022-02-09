@@ -1,4 +1,4 @@
-const { name } = require('../../package.json');
+const { name, version } = require('../../package.json');
 
 export const initStyle = () => {
   const ENV = process.env.NODE_ENV || 'development';
@@ -17,7 +17,7 @@ export const initStyle = () => {
 
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = '//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.css';
+    link.href = `//cdn.jsdelivr.net/npm/qw-sdk-demo@${version}/dist/qwsdk.css`;
     head.appendChild(link);
 
     (window as any)[key] = true;

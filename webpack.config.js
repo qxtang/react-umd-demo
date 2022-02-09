@@ -1,4 +1,5 @@
 const path = require('path');
+const { version } = require('./package.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -17,7 +18,7 @@ module.exports = {
   entry: './index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: isDev ? '/dist' : '//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/',
+    publicPath: isDev ? '/dist' : `//cdn.jsdelivr.net/npm/qw-sdk-demo@${version}/dist/`,
     filename: 'qwsdk.js',
     library: {
       name: 'QwSdk',
