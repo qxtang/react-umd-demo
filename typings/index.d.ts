@@ -7,11 +7,9 @@ export default QwSdk;
 
 declare class QwSdk {
   constructor(options: QwSdk.QwSdkOptions);
-
   sayHello(): void;
-
   setTheme(theme: Theme): void; // 设置主题颜色
-  render(options: QwSdk.RenderOptions): void; // 执行渲染
+  render(options: QwSdk.RenderOptions): void; // 生成渲染
 }
 
 declare namespace QwSdk {

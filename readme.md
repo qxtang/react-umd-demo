@@ -1,6 +1,6 @@
 # 天下苦 iframe 久矣
 
-将业务组件打包成 sdk 项目 demo，并且不受接入方技术栈限制，达到一次编写，处处运行，以公司的企微中台产品为例
+项目 demo，将业务组件打包成 sdk，并且不受接入方技术栈限制，达到一次编写，处处运行，以公司的企微中台产品为例
 
 # 解决的问题
 
@@ -52,7 +52,7 @@ qw.render({
   page: 'ChannelCode', // 字符串，要渲染哪一个中台组件
   permission: ['00', '01'], // 权限点
 
-  // 自定义样式
+  // 自定义包裹元素样式
   style: {
     border: '1px solid red',
   },
@@ -61,6 +61,8 @@ qw.render({
 ```
 
 ## 方式二（React 组件）
+
+当然在 react 也可以使用方式一
 
 ```jsx
 import QwSdk from 'qw-sdk-demo/dist/qwsdk-react';
@@ -84,11 +86,6 @@ export default function App() {
 
 [typings/index.d.ts](https://github.com/qxtang/qw-sdk-demo/blob/master/typings/index.d.ts)
 
-# 可用命令
-
-- `yarn dev` 本地运行
-- `yarn build` 打包
-
 # 其他
 
 - 使用 preact/compat 代替 react 以减小打包体积
@@ -96,3 +93,4 @@ export default function App() {
 # TODO
 
 - 跨域鉴权？
+- 全局状态管理？

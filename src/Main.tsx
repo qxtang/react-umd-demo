@@ -28,6 +28,9 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
 
   // 懒加载需要渲染的中台页面
   const pageRender = useCallback(() => {
+    // 对接入方进行鉴权
+    // ...
+
     const Result = React.lazy(() => import(`./component/pages/${page}`));
     return (<Result {...pageProps}/>);
   }, [page]);

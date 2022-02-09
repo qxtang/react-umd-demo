@@ -7,12 +7,14 @@ import types from '../typings';
 import { Theme } from 'antd/lib/config-provider/context';
 import Main from './Main';
 import { ConfigProvider } from 'antd';
+import { initStyle } from './utils/tools';
 
 class QwSdk {
   options: types.QwSdkOptions;
 
   constructor(options = { container: '' }) {
     this.options = options;
+    initStyle();
   }
 
   // 设置 antd 主题
