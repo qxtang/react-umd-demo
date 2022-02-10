@@ -14,6 +14,14 @@ const styles: { [classname: string]: CSSProperties } = {
   container: {
     backgroundColor: '#ffffff',
     padding: 10
+  },
+  block: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  count: {
+    margin: '0 10px'
   }
 };
 
@@ -25,12 +33,14 @@ const ReduxTest: React.FC = () => {
 
   return (
     <div style={styles.container}>
-      <div className="flex">
+      <h2>Redux 测试页</h2>
+
+      <div style={styles.block}>
         <button onClick={() => dispatch(decrement())}>-</button>
-        <span>{count}</span>
+        <span style={styles.count}>{count}</span>
         <button onClick={() => dispatch(increment())}>+</button>
       </div>
-      <div className="flex">
+      <div style={styles.block}>
         <input value={incrementAmount} onChange={e => setIncrementAmount(e.target.value)} />
         <button onClick={() => dispatch(incrementByAmount(incrementValue))}>Add Amount</button>
         <button onClick={() => dispatch(incrementAsync(incrementValue))}>Add Async</button>
