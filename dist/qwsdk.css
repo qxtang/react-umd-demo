@@ -19,4 +19,8 @@
   margin-top: 10px;
   padding: 5px;
 }
+.qw_sdk_demo_container .flex {
+  display: flex;
+  align-items: center;
+}
 

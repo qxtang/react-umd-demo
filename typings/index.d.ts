@@ -13,7 +13,7 @@ declare class QwSdk {
 }
 
 declare namespace QwSdk {
-  type PageType = 'NotFound' | 'ChannelCode' | 'MaterialCenter' | 'Greeting';
+  type PageType = 'NotFound' | 'ChannelCode' | 'MaterialCenter' | 'Greeting' | 'ReduxTest';
 
   interface QwSdkOptions {
     container: string | HTMLElement; // 渲染节点 id 或 元素

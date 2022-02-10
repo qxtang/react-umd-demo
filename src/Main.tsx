@@ -7,6 +7,8 @@ import { ConfigProvider } from 'antd';
 import QwSdk from '../typings';
 import { isEmpty } from 'lodash';
 import { initStyle } from './utils/tools';
+import { Provider } from 'react-redux';
+import { store } from './store/index';
 
 initStyle();
 
@@ -25,14 +27,18 @@ const Main: React.FC<QwSdk.RenderOptions> = props => {
     // 对接入方进行鉴权
     // ...
 
-    const Result = React.lazy(() => import(`./component/pages/${page}`));
+    const Result = React.lazy(() => import(`./pages/${page}`));
     return <Result {...pageProps} />;
   }, [page]);
 
   return (
-    <div className={`qw_sdk_demo_container ${className}`} style={style}>
-      <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
-    </div>
+    <React.StrictMode>
+      <Provider store={store}>
+        <div className={`qw_sdk_demo_container ${className}`} style={style}>
+          <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
+        </div>
+      </Provider>
+    </React.StrictMode>
   );
 };
 

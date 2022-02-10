@@ -22,6 +22,7 @@ module.exports = {
   entry: './index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
+
     publicPath: isDev ? '/dist' : `//cdn.jsdelivr.net/npm/qw-sdk-demo@${version}/dist/`,
     filename: 'qwsdk.js',
     library: {

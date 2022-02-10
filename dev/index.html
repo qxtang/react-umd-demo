@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dev</title>
     <style>
-      html,
       body {
         height: auto !important;
         padding: 10px;
@@ -36,6 +35,7 @@
       <div>
         <label for="select">切换页面：</label>
         <select id="select">
+          <option value="ReduxTest">ReduxTest</option>
           <option value="ChannelCode">ChannelCode</option>
           <option value="MaterialCenter">MaterialCenter</option>
           <option value="Greeting">Greeting</option>
@@ -59,7 +59,7 @@
       });
 
       qw.render({
-        page: 'ChannelCode', // 要渲染哪一个中台组件
+        page: 'ReduxTest', // 要渲染哪一个中台组件
         permission: ['00', '01'] // 权限点
       });
 
