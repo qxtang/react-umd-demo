@@ -3,12 +3,16 @@ const { version } = require('./package.json');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyPlugin = require('copy-webpack-plugin');
 
 const ENV = process.env.NODE_ENV || 'development';
 const isDev = ENV !== 'production';
 
 const commonPlugins = [
-  // new BundleAnalyzerPlugin()
+  // new BundleAnalyzerPlugin(),
+  new CopyPlugin({
+    patterns: [{ from: path.resolve(__dirname, 'typings/qwsdk-react.d.ts'), to: path.resolve(__dirname, 'dist') }]
+  })
 ];
 
 module.exports = {
