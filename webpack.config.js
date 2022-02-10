@@ -23,8 +23,8 @@ module.exports = {
     library: {
       name: 'QwSdk',
       type: 'umd',
-      export: 'default',
-    },
+      export: 'default'
+    }
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
@@ -32,15 +32,15 @@ module.exports = {
     // 使用 preact 代替
     alias: {
       react: 'preact/compat',
-      'react-dom': 'preact/compat',
-    },
+      'react-dom': 'preact/compat'
+    }
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: 'babel-loader'
       },
       {
         test: /\.less$/,
@@ -52,11 +52,11 @@ module.exports = {
             loader: 'less-loader',
             options: {
               lessOptions: {
-                javascriptEnabled: true,
-              },
-            },
-          },
-        ],
+                javascriptEnabled: true
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
@@ -64,27 +64,27 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1024 * 10,
-            },
-          },
-        ],
-      },
-    ],
+              limit: 1024 * 10
+            }
+          }
+        ]
+      }
+    ]
   },
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        extractComments: false,
-      }),
-    ],
+        extractComments: false
+      })
+    ]
   },
   plugins: isDev ? [...commonPlugins] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' }), ...commonPlugins],
   devServer: {
     port: 8002,
     host: '0.0.0.0',
     static: {
-      directory: path.join(__dirname, './dev'),
-    },
-  },
+      directory: path.join(__dirname, './dev')
+    }
+  }
 };

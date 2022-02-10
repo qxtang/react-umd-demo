@@ -9,7 +9,7 @@ webpackConfig.output.filename = 'qwsdk-react.js';
 // 使用 commonjs 规范
 webpackConfig.externals = {
   react: 'commonjs react',
-  'react-dom': 'commonjs react-dom',
+  'react-dom': 'commonjs react-dom'
 };
 
 module.exports = webpackConfig;

@@ -1,10 +1,7 @@
 module.exports = {
-  'presets': [
-    '@babel/preset-react',
-    '@babel/typescript'
-  ],
+  presets: ['@babel/preset-react', '@babel/typescript'],
 
-  'plugins': [
+  plugins: [
     // antd4 已默认支持按需加载
     // [
     //     'import',

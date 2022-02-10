@@ -46,7 +46,7 @@ import QwSdk from 'qw-sdk-demo';
 
 ```javascript
 const qw = new QwSdk({
-  container: 'qw-container', // 容器元素 id
+  container: 'qw-container' // 容器元素 id
 });
 
 qw.render({
@@ -55,9 +55,9 @@ qw.render({
 
   // 自定义包裹元素样式
   style: {
-    border: '1px solid red',
+    border: '1px solid red'
   },
-  className: 'abc',
+  className: 'abc'
 });
 ```
 

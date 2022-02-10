@@ -8,18 +8,9 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "baseUrl": "./"
   },
-  "typeRoots": [
-    "node_modules/@types",
-    "typings/index.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "typeRoots": ["node_modules/@types", "typings/index.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

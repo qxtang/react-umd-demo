@@ -1,84 +1,82 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev</title>
+    <style>
+      html,
+      body {
+        height: auto !important;
+        padding: 10px;
+      }
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dev</title>
-  <style>
-    html,
-    body {
-      height: auto !important;
-      padding: 10px;
-    }
+      .flex {
+        display: flex;
+        align-items: center;
+      }
 
-    .flex {
-      display: flex;
-      align-items: center;
-    }
+      .flex > * {
+        margin-right: 10px;
+      }
 
-    .flex>* {
-      margin-right: 10px;
-    }
+      #qw-container {
+        margin: 30px auto;
+        max-width: 100vw;
+        width: 800px;
+      }
+    </style>
+  </head>
 
-    #qw-container {
-      margin: 30px auto;
-      max-width: 100vw;
-      width: 800px;
-    }
-  </style>
-</head>
+  <body>
+    <h1>我是接入方~</h1>
 
-<body>
-  <h1>我是接入方~</h1>
-
-  <div class="flex">
-    <div>
-      <label for="select">切换页面：</label>
-      <select id="select">
-        <option value="ChannelCode">ChannelCode</option>
-        <option value="MaterialCenter">MaterialCenter</option>
-        <option value="Greeting">Greeting</option>
-      </select>
+    <div class="flex">
+      <div>
+        <label for="select">切换页面：</label>
+        <select id="select">
+          <option value="ChannelCode">ChannelCode</option>
+          <option value="MaterialCenter">MaterialCenter</option>
+          <option value="Greeting">Greeting</option>
+        </select>
+      </div>
+      <div>
+        <label for="color">修改主题色：</label>
+        <input type="color" id="color" value="#40a9ff" />
+      </div>
     </div>
-    <div>
-      <label for="color">修改主题色：</label>
-      <input type="color" id="color" value="#40a9ff" />
-    </div>
-  </div>
 
-  <div id="qw-container"></div>
+    <div id="qw-container"></div>
 
-  <script src="/dist/qwsdk.js"></script>
-  <script>
-    const select = document.querySelector('#select');
-    const color = document.querySelector('#color');
+    <script src="/dist/qwsdk.js"></script>
+    <script>
+      const select = document.querySelector('#select');
+      const color = document.querySelector('#color');
 
-    const qw = new QwSdk({
-      container: 'qw-container', // 容器元素 id
-    });
+      const qw = new QwSdk({
+        container: 'qw-container' // 容器元素 id
+      });
 
-    qw.render({
-      page: 'ChannelCode', // 要渲染哪一个中台组件
-      permission: ['00', '01'], // 权限点
-    });
-
-    select.onchange = function (e) {
-      const value = e.target.value;
       qw.render({
-        page: value,
-        permission: ['00', '01'],
+        page: 'ChannelCode', // 要渲染哪一个中台组件
+        permission: ['00', '01'] // 权限点
       });
-    };
 
-    color.onchange = function (e) {
-      const value = e.target.value;
-      qw.setTheme({
-        primaryColor: value,
-      });
-    };
-  </script>
-</body>
+      select.onchange = function (e) {
+        const value = e.target.value;
+        qw.render({
+          page: value,
+          permission: ['00', '01']
+        });
+      };
 
+      color.onchange = function (e) {
+        const value = e.target.value;
+        qw.setTheme({
+          primaryColor: value
+        });
+      };
+    </script>
+  </body>
 </html>

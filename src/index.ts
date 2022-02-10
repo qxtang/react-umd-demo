@@ -40,10 +40,7 @@ class QwSdk {
       node = container;
     }
 
-    return render(
-      React.createElement(Main, options),
-      node
-    );
+    return render(React.createElement(Main, options), node);
   }
 }
 

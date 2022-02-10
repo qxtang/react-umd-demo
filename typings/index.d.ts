@@ -13,7 +13,7 @@ declare class QwSdk {
 }
 
 declare namespace QwSdk {
-  type PageType = 'NotFound' | 'ChannelCode' | 'MaterialCenter' | 'Greeting'
+  type PageType = 'NotFound' | 'ChannelCode' | 'MaterialCenter' | 'Greeting';
 
   interface QwSdkOptions {
     container: string | HTMLElement; // 渲染节点 id 或 元素
@@ -21,8 +21,8 @@ declare namespace QwSdk {
 
   // 调用 render 方法的参数，同时也是 react 组件形式时的组件属性
   interface RenderOptions {
-    page: PageType;  // 渲染哪一个中台组件
-    permission?: string[];  // 中台权限点
+    page: PageType; // 渲染哪一个中台组件
+    permission?: string[]; // 中台权限点
     className?: string; // 包裹元素 className
     style?: CSSProperties; // 包裹元素 style
     theme?: Theme; // antd 主题配置
@@ -30,6 +30,6 @@ declare namespace QwSdk {
     // 传给页面组件的属性
     pageProps?: {
       onGetChannelInfoBtnClick?: (info: any) => void; // 渠道码页面获取渠道码信息按钮点击事件，用于测试传入自定义事件
-    }
+    };
   }
 }

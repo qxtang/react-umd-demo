@@ -10,14 +10,8 @@ import { initStyle } from './utils/tools';
 
 initStyle();
 
-const Main: React.FC<QwSdk.RenderOptions> = (props) => {
-  const {
-    page = 'NotFound',
-    className = '',
-    style = {},
-    theme = {},
-    pageProps = {}
-  } = props;
+const Main: React.FC<QwSdk.RenderOptions> = props => {
+  const { page = 'NotFound', className = '', style = {}, theme = {}, pageProps = {} } = props;
 
   // 设置 antd 主题
   useEffect(() => {
@@ -32,17 +26,12 @@ const Main: React.FC<QwSdk.RenderOptions> = (props) => {
     // ...
 
     const Result = React.lazy(() => import(`./component/pages/${page}`));
-    return (<Result {...pageProps}/>);
+    return <Result {...pageProps} />;
   }, [page]);
 
   return (
-    <div
-      className={`qw_sdk_demo_container ${className}`}
-      style={style}
-    >
-      <React.Suspense fallback={<div>loading...</div>}>
-        {pageRender()}
-      </React.Suspense>
+    <div className={`qw_sdk_demo_container ${className}`} style={style}>
+      <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
     </div>
   );
 };

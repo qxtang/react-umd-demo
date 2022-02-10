@@ -1,0 +1,5 @@
+dist
+.vscode
+.husky
+package.json
+node_modules
