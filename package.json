@@ -23,11 +23,6 @@
     "build": "rimraf ./dist && cross-env NODE_ENV=production webpack && yarn build:react",
     "lint": "eslint src"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn prettier && git add ."
-    }
-  },
   "files": [
     "readme.md",
     "dist",
