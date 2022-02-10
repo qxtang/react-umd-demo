@@ -16,12 +16,12 @@
   "types": "typings/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn && yarn build && git add . && git commit -m publish && npm version patch",
-    "prepare": "npx husky install && npx husky add .husky/pre-commit \"yarn prettier && git add .\"",
+    "prepare": "npx husky install && npx husky add .husky/pre-commit \"yarn prettier && yarn lint && git add .\"",
     "prettier": "prettier --write .",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
     "build:react": "cross-env NODE_ENV=production webpack --config webpack.config.react.js",
     "build": "rimraf ./dist && cross-env NODE_ENV=production webpack && yarn build:react",
-    "lint": "eslint src"
+    "lint": "eslint --fix src"
   },
   "files": [
     "readme.md",
@@ -41,6 +41,7 @@
     "antd": "^4.18.4",
     "babel-loader": "^8.2.3",
     "babel-plugin-import": "^1.13.3",
+    "copy-webpack-plugin": "^10.2.4",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.7.0",
