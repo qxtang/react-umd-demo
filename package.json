@@ -15,7 +15,7 @@
   "main": "dist/qwsdk.js",
   "types": "typings/index.d.ts",
   "scripts": {
-    "prepublishOnly": "yarn && yarn build && git add . && git commit -m publish && npm version patch",
+    "prepublishOnly": "npm version patch && yarn build && git add . && git commit -m publish",
     "prepare": "npx husky install && npx husky add .husky/pre-commit \"yarn prettier && yarn lint && git add .\"",
     "prettier": "prettier --write .",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
