@@ -4,15 +4,16 @@
 import React, { useCallback, useEffect } from 'react';
 import './style/global.less';
 import { ConfigProvider } from 'antd';
-import QwSdk from '../typings';
+import types from '../typings';
 import { isEmpty } from 'lodash';
 import { initStyle } from './utils/tools';
+import ErrorBoundary from './component/ErrorBoundary';
 import { Provider } from 'react-redux';
 import { store } from './store/index';
 
 initStyle();
 
-const Main: React.FC<QwSdk.RenderOptions> = props => {
+const Main: React.FC<types.RenderOptions> = props => {
   const { page = 'NotFound', className = '', style = {}, theme = {}, pageProps = {} } = props;
 
   // 设置 antd 主题
@@ -33,11 +34,13 @@ const Main: React.FC<QwSdk.RenderOptions> = props => {
 
   return (
     <React.StrictMode>
-      <Provider store={store}>
-        <div className={`qw_sdk_demo_container ${className}`} style={style}>
-          <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
-        </div>
-      </Provider>
+      <ErrorBoundary>
+        <Provider store={store}>
+          <div className={`qw_sdk_demo_container ${className}`} style={style}>
+            <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
+          </div>
+        </Provider>
+      </ErrorBoundary>
     </React.StrictMode>
   );
 };
