@@ -14,7 +14,7 @@ import { store } from './store/index';
 initStyle();
 
 const Main: React.FC<types.RenderOptions> = props => {
-  const { type = 'NotFound', className = '', style = {}, theme = {}, pageProps = {} } = props;
+  const { type = 'NotFound', className = '', style = {}, theme = {}, componentProps = {} } = props;
 
   // 设置 antd 主题
   useEffect(() => {
@@ -29,7 +29,7 @@ const Main: React.FC<types.RenderOptions> = props => {
     // ...
 
     const Result = React.lazy(() => import(`./pages/${type}`));
-    return <Result {...pageProps} />;
+    return <Result {...componentProps} />;
   }, [type]);
 
   return (
