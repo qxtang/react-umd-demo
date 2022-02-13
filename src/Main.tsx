@@ -14,7 +14,7 @@ import { store } from './store/index';
 initStyle();
 
 const Main: React.FC<types.RenderOptions> = props => {
-  const { page = 'NotFound', className = '', style = {}, theme = {}, pageProps = {} } = props;
+  const { type = 'NotFound', className = '', style = {}, theme = {}, pageProps = {} } = props;
 
   // 设置 antd 主题
   useEffect(() => {
@@ -28,9 +28,9 @@ const Main: React.FC<types.RenderOptions> = props => {
     // 对接入方进行鉴权
     // ...
 
-    const Result = React.lazy(() => import(`./pages/${page}`));
+    const Result = React.lazy(() => import(`./pages/${type}`));
     return <Result {...pageProps} />;
-  }, [page]);
+  }, [type]);
 
   return (
     <React.StrictMode>

@@ -49,7 +49,7 @@ const qw = new QwSdk({
 });
 
 qw.render({
-  page: 'ChannelCode', // 字符串，要渲染哪一个中台组件
+  type: 'ChannelCode', // 字符串，要渲染哪一个中台组件
   permission: ['00', '01'], // 权限点
 
   // 自定义包裹元素样式
@@ -71,7 +71,7 @@ export default function App() {
   return (
     <div className="App">
       <QwSdk
-        page="ChannelCode"
+        type="ChannelCode"
         permission={['00', '01']}
         className="abc"
         style={{ color: 'red' }}
@@ -93,4 +93,3 @@ export default function App() {
 # TODO
 
 - 鉴权方案？
-- 接入方能否同时使用 redux

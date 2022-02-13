@@ -59,14 +59,14 @@
       });
 
       qw.render({
-        page: 'ReduxTest', // 要渲染哪一个中台组件
+        type: 'ReduxTest', // 要渲染哪一个中台组件
         permission: ['00', '01'] // 权限点
       });
 
       select.onchange = function (e) {
         const value = e.target.value;
         qw.render({
-          page: value,
+          type: value,
           permission: ['00', '01']
         });
       };

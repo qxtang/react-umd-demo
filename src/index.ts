@@ -22,10 +22,6 @@ class QwSdk {
     ConfigProvider.config({ theme });
   }
 
-  sayHello() {
-    console.log(new Date(), 'hello，我是企微中台 sdk!!!');
-  }
-
   // 生成渲染
   render(options: types.RenderOptions) {
     const { container } = this.options;
