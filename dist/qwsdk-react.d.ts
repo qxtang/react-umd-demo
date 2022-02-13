@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * as types from '../typings';
+import types from '../typings';
 
-declare class QwSdk extends React.Component<types.default.RenderOptions> {
-  constructor(props: types.default.RenderOptions);
+declare class QwSdk extends React.Component<types.RenderOptions> {
+  constructor(props: types.RenderOptions);
   render(): JSX.Element;
 }
 
