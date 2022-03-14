@@ -1,5 +1,5 @@
-- 调研项目模板，将用 react 开发的业务组件打包成 umd 和 react 组件的格式供接入方使用，不受接入方技术栈限制，以公司的企微中台产品为例
-- 解决 iframe 的痛点：各种隔离、页面刷新状态丢失、postMessage 的方式对接不友好等问题，打包成 umd 或组件有类型提示，对接友好
+- 调研项目，将用 react 开发的业务组件打包成 umd 和 react 组件的型式供接入方使用，不受接入方技术栈限制的微前端方案调研，以公司的企微中台产品为例
+- iframe 的痛点：各种隔离、页面刷新状态丢失、postMessage 的方式对接不友好等问题，打包成 umd 或组件有类型提示，对接友好
 
 # 使用示例
 
@@ -9,13 +9,13 @@
 
 # 安装
 
-## 方式一：script 引入
+## 方式一：script 引入（推荐）
 
 ```html
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
-## 方式二：npm 安装
+## 方式二：npm 安装（不推荐）
 
 ```sh
 npm install qw-sdk-demo
@@ -27,7 +27,7 @@ import QwSdk from 'qw-sdk-demo';
 
 # 使用
 
-## 方式一
+## 方式一（推荐）
 
 添加一个容器
 
@@ -54,9 +54,7 @@ qw.render({
 });
 ```
 
-## 方式二：React 组件
-
-当然在 react 也可以使用方式一
+## 方式二：React 组件（不推荐）
 
 ```jsx
 import QwSdk from 'qw-sdk-demo/dist/qwsdk-react';
@@ -80,6 +78,10 @@ export default function App() {
 
 [typings/index.d.ts](https://github.com/qxtang/qw-sdk-demo/blob/master/typings/index.d.ts)
 
+# 不推荐使用 npm 包接入的原因
+
+将每个微前端发布为一个 npm 包，并让宿主将所有微前端应用作为依赖项，这意味着只要有一个包更新，即使是小版本更新比如修复了小 bug，也需要通知所有宿主应用升级这些包并且重新构建一次。非常不建议使用这种方案
+
 # 其他
 
 - 使用 preact/compat 代替 react 以减小打包体积
@@ -87,5 +89,5 @@ export default function App() {
 # 存在的问题
 
 - 登录态、鉴权方案
-- 样式污染接入方问题
-- 即使是每次小版本更新也需要通知所有接入方升级
+- 样式污染问题
+- react 版本与接入方不一致问题
