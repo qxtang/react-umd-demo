@@ -1,5 +1,6 @@
 - 调研项目，将用 react 开发的业务组件打包成 umd 和 react 组件的型式供接入方使用，不受接入方技术栈限制的微前端方案调研，以公司的企微中台产品为例
-- iframe 的痛点：各种隔离、页面刷新状态丢失、postMessage 的方式对接不友好等问题，打包成 umd 或组件有类型提示，对接友好
+- iframe 的痛点：[Why Not Iframe](https://www.yuque.com/kuitos/gky7yw/gesexv)
+- 打包成 umd 或组件有类型提示，对接更友好
 
 # 使用示例
 
@@ -27,7 +28,7 @@ import QwSdk from 'qw-sdk-demo';
 
 # 使用
 
-## 方式一（推荐）
+## 方式一
 
 添加一个容器
 
@@ -54,7 +55,7 @@ qw.render({
 });
 ```
 
-## 方式二：React 组件（不推荐）
+## 方式二：React 组件
 
 ```jsx
 import QwSdk from 'qw-sdk-demo/dist/qwsdk-react';
