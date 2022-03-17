@@ -1,6 +1,6 @@
 {
   "name": "qw-sdk-demo",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "author": "qxtang",
   "description": "将 react 业务组件打包成 umd 供接入方使用",
   "keywords": [
