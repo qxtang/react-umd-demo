@@ -1,4 +1,4 @@
-- 调研项目，将用 react 开发的业务组件打包成 umd 和 react 组件的型式供接入方使用，不受接入方技术栈限制的微前端方案调研，以公司的企微中台产品为例
+- 调研项目，将 react 开发的业务组件打包成 umd 供接入方使用，不受接入方技术栈限制的微前端方案调研，以公司的企微中台产品为例
 - iframe 的痛点：[Why Not Iframe](https://www.yuque.com/kuitos/gky7yw/gesexv)
 - 打包成 umd 或组件有类型提示，对接更友好
 
@@ -10,13 +10,13 @@
 
 # 安装
 
-## 方式一：script 引入（推荐）
+## 方式一：script 引入
 
 ```html
 <script src="//cdn.jsdelivr.net/npm/qw-sdk-demo@latest/dist/qwsdk.js"></script>
 ```
 
-## 方式二：npm 安装（不推荐）
+## 方式二：npm 安装
 
 ```sh
 npm install qw-sdk-demo
@@ -79,7 +79,7 @@ export default function App() {
 
 [typings/index.d.ts](https://github.com/qxtang/qw-sdk-demo/blob/master/typings/index.d.ts)
 
-# 不推荐使用 npm 包接入的原因
+# 不推荐使用 npm 包接入
 
 将每个微前端发布为一个 npm 包，并让宿主将所有微前端应用作为依赖项，这意味着只要有一个包更新，即使是小版本更新比如修复了小 bug，也需要通知所有宿主应用升级这些包并且重新构建一次。非常不建议使用这种方案
 
