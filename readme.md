@@ -1,4 +1,4 @@
-- 调研项目，将 react 开发的业务组件打包成 umd 供接入方使用，不受接入方技术栈限制的微前端方案调研，以公司的企微中台产品为例
+- 将 react 开发的业务组件打包成 umd 供接入方使用，不受接入方技术栈限制的方案调研，以公司的企微中台产品为例
 - iframe 的痛点：[Why Not Iframe](https://www.yuque.com/kuitos/gky7yw/gesexv)
 - 打包成 umd 或组件有类型提示，对接更友好
 
