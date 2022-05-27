@@ -11,7 +11,9 @@ const isDev = ENV !== 'production';
 const commonPlugins = [
   // new BundleAnalyzerPlugin(),
   new CopyPlugin({
-    patterns: [{ from: path.resolve(__dirname, 'typings/qwsdk-react.d.ts'), to: path.resolve(__dirname, 'dist') }]
+    patterns: [
+      { from: path.resolve(__dirname, 'typings/react-umd-demo-component.d.ts'), to: path.resolve(__dirname, 'dist') }
+    ]
   })
 ];
 
@@ -22,10 +24,10 @@ module.exports = {
   entry: './index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: isDev ? '/dist' : `//cdn.jsdelivr.net/npm/qw-sdk-demo@${version}/dist/`,
-    filename: 'qwsdk.js',
+    publicPath: isDev ? '/dist' : `//cdn.jsdelivr.net/npm/react-umd-demo@${version}/dist/`,
+    filename: 'react-umd-demo.js',
     library: {
-      name: 'QwSdk',
+      name: 'ReactUmdDemo',
       type: 'umd',
       export: 'default'
     }
@@ -83,7 +85,9 @@ module.exports = {
       })
     ]
   },
-  plugins: isDev ? [...commonPlugins] : [new MiniCssExtractPlugin({ filename: 'qwsdk.css' }), ...commonPlugins],
+  plugins: isDev
+    ? [...commonPlugins]
+    : [new MiniCssExtractPlugin({ filename: 'react-umd-demo.css' }), ...commonPlugins],
   devServer: {
     port: 8002,
     host: '0.0.0.0',

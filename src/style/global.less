@@ -1,17 +1,15 @@
 @import '~antd/dist/antd.variable.min.css';
 
-.qw_sdk_demo_container {
+.wrap(@border-color: #333333) {
   background-color: #efefef;
   padding: 10px;
-  border: 1px dashed #333333;
+  border: 1px dashed @border-color;
   border-radius: 8px;
   max-width: 100vw;
+}
 
-  .border {
-    border: 1px solid #333333;
-    margin-top: 10px;
-    padding: 5px;
-  }
+.react_umd_demo_container {
+  .wrap();
 
   .flex {
     display: flex;
@@ -20,9 +18,5 @@
 }
 
 .error {
-  background-color: #efefef;
-  padding: 10px;
-  border: 1px dashed #ff3333;
-  border-radius: 8px;
-  max-width: 100vw;
+  .wrap(#ff3333);
 }

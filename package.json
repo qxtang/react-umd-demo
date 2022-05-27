@@ -1,5 +1,5 @@
 {
-  "name": "qw-sdk-demo",
+  "name": "react-umd-demo",
   "version": "1.0.26",
   "author": "qxtang",
   "description": "将 react 业务组件打包成 umd 供接入方使用",
@@ -10,9 +10,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:qxtang/qw-sdk-demo.git"
+    "url": "git@github.com:qxtang/react-umd-demo.git"
   },
-  "main": "dist/qwsdk.js",
+  "main": "dist/react-umd-demo.js",
   "types": "typings/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm version patch && yarn build && git add . && git commit -m publish",

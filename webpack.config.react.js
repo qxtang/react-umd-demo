@@ -4,7 +4,7 @@ const webpackConfig = Object.create(require('./webpack.config.js'));
 
 webpackConfig.entry = './Main.tsx';
 webpackConfig.output = Object.create(webpackConfig.output);
-webpackConfig.output.filename = 'qwsdk-react.js';
+webpackConfig.output.filename = 'react-umd-demo-component.js';
 
 // 使用 commonjs 规范
 webpackConfig.externals = {

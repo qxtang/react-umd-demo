@@ -1,5 +1,5 @@
 /**
- * @description QwSdk类，导出给用户使用
+ * @description ReactUmdDemo 类，导出给用户使用
  */
 import React from 'react';
 import { render } from 'react-dom';
@@ -9,8 +9,8 @@ import Main from './Main';
 import { ConfigProvider } from 'antd';
 import { initStyle } from './utils/tools';
 
-class QwSdk {
-  options: types.QwSdkOptions;
+class ReactUmdDemo {
+  options: types.ReactUmdDemoOptions;
 
   constructor(options = { container: '' }) {
     this.options = options;
@@ -40,4 +40,4 @@ class QwSdk {
   }
 }
 
-export default QwSdk;
+export default ReactUmdDemo;

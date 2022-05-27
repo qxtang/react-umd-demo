@@ -19,6 +19,6 @@
     "@typescript-eslint/no-empty-function": 0
   },
   "globals": {
-    "QwSdk": true
+    "ReactUmdDemo": true
   }
 }

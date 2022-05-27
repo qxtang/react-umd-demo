@@ -9,7 +9,7 @@ import { isEmpty } from 'lodash';
 import { initStyle } from './utils/tools';
 import ErrorBoundary from './component/ErrorBoundary';
 import { Provider } from 'react-redux';
-import { store } from './store/index';
+import { store } from './store';
 
 initStyle();
 
@@ -36,7 +36,7 @@ const Main: React.FC<types.RenderOptions> = props => {
     <React.StrictMode>
       <ErrorBoundary>
         <Provider store={store}>
-          <div className={`qw_sdk_demo_container ${className}`} style={style}>
+          <div className={`react_umd_demo_container ${className}`} style={style}>
             <React.Suspense fallback={<div>loading...</div>}>{pageRender()}</React.Suspense>
           </div>
         </Provider>

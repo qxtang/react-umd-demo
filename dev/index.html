@@ -20,7 +20,7 @@
         margin-right: 10px;
       }
 
-      #qw-container {
+      #container {
         margin: 30px auto;
         max-width: 100vw;
         width: 800px;
@@ -29,16 +29,15 @@
   </head>
 
   <body>
-    <h1>我是接入方~</h1>
+    <h2>我是接入方~</h2>
 
     <div class="flex">
       <div>
         <label for="select">切换页面：</label>
         <select id="select">
           <option value="ReduxTest">ReduxTest</option>
-          <option value="ChannelCode">ChannelCode</option>
-          <option value="MaterialCenter">MaterialCenter</option>
-          <option value="Greeting">Greeting</option>
+          <option value="Page1">Page1</option>
+          <option value="Page2">Page2</option>
         </select>
       </div>
       <div>
@@ -47,33 +46,31 @@
       </div>
     </div>
 
-    <div id="qw-container"></div>
+    <div id="container"></div>
 
-    <script src="/dist/qwsdk.js"></script>
+    <script src="/dist/react-umd-demo.js"></script>
     <script>
       const select = document.querySelector('#select');
       const color = document.querySelector('#color');
 
-      const qw = new QwSdk({
-        container: 'qw-container' // 容器元素 id
+      const instance = new ReactUmdDemo({
+        container: 'container'
       });
 
-      qw.render({
-        type: 'ReduxTest', // 要渲染哪一个中台组件
-        permission: ['00', '01'] // 权限点
+      instance.render({
+        type: 'ReduxTest'
       });
 
       select.onchange = function (e) {
         const value = e.target.value;
-        qw.render({
-          type: value,
-          permission: ['00', '01']
+        instance.render({
+          type: value
         });
       };
 
       color.onchange = function (e) {
         const value = e.target.value;
-        qw.setTheme({
+        instance.setTheme({
           primaryColor: value
         });
       };

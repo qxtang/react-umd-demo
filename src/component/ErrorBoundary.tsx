@@ -1,5 +1,5 @@
 /**
- * 错误边界
+ * @description: 错误边界
  */
 import React from 'react';
 
