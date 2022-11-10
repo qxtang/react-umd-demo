@@ -1,6 +1,7 @@
 - 将 react 开发的业务组件打包成 umd 供接入方使用，不受接入方技术栈限制的方案调研
 - iframe 的痛点：[Why Not Iframe](https://www.yuque.com/kuitos/gky7yw/gesexv)
 - 打包成 umd 或组件有类型提示，对接更友好
+- 使用场景：例如公司里使用 cocos 开发的一个小游戏项目，需要接入使用 react 开发的通用组件时；公司各个使用了不同技术栈的前端项目，需要接入通用组件时。
 
 # 使用示例
 
@@ -28,7 +29,7 @@ import ReactUmdDemo from 'react-umd-demo';
 
 # 使用
 
-## 方式一
+## 方式一（推荐）
 
 添加一个容器
 
