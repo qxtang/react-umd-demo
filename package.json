@@ -1,8 +1,8 @@
 {
   "name": "react-umd-demo",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "author": "qxtang",
-  "description": "将 react 业务组件打包成 umd 供接入方使用",
+  "description": "将 react 组件打包成 umd，支持 script 引入和 React 组件两种使用方式",
   "keywords": [
     "plugin",
     "lib",
@@ -15,7 +15,7 @@
   "main": "dist/react-umd-demo.js",
   "types": "typings/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm version patch && yarn build && git add . && git commit -m publish",
+    "prepublishOnly": "yarn build",
     "prepare": "npx husky install && npx husky add .husky/pre-commit \"yarn prettier && yarn lint && git add .\"",
     "prettier": "prettier --write .",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",

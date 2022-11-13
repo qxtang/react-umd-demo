@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkReactUmdDemo=self.webpackChunkReactUmdDemo||[]).push([[660],{8660:function(e,a,t){t.r(a);var c=t(6689),n=t.n(c);a.default=()=>n().createElement("div",null,"Page2")}}]);

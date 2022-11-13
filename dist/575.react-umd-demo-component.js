@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkReactUmdDemo=self.webpackChunkReactUmdDemo||[]).push([[575],{2575:function(e,t,l){l.r(t);var n=l(6689),a=l.n(n),c=l(5078),m=l(6591);t.default=()=>a().createElement("div",null,a().createElement("h2",null,"Page1"),a().createElement(m.Z,{onClick:()=>{c.Z.info({title:"打开弹窗"})},type:"primary"},"打开弹窗"))}}]);
